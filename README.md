@@ -18,6 +18,19 @@ The rules are yet to be defined for TLOU2 speedruns, so these efforts are prelim
 Based ont he above, this laod remover checks for when "Skip Cutscene" first disappears, then waits for the black screen to end only if it is not the gradient moths.
 
 
+##  Does it work?
+
+These seem to work VERY well on my end, however different setups may cause different issues.  Also, there could be some scenerios in which they break.  
+
+The HZD load remover has worked great for a few people.   So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings.  I recommend starting with hzd.vas, checking your video settings, and if all that fails then try the hzdAussie.vas file instead with minimally different tunings.
+
+The TLOU2 load remover works very strongly in starting the timer pause, i.e. the start of a load.  This is due to the strong feature set in the menus.  The load remover is however a bit weaker defining the end of a load, where sections of the screen are measured for pure black.  If the end of the laod dispplays video that is too dard, it may not detect it as the end of the load.  This is however easily fixable, but more testing and example failures will be needed.
+
+
+Basd on the above, feel free to try these tools.  LiveSplit will still continue you measure your RTA time even if your IGT gets messed up from failed load detection.  I do however ask that if you try this, expect that this is beta-test sotware and I hope that if it does fail that you can provide feedback so that I can make the tools stronger.
+
+
+
 
 ## Requirements
 
@@ -39,7 +52,7 @@ This assumes that you already have LiveSplit installed.  If not, please visit th
 
 1. Download the Video Autosplitter v0.5.2.3: [LiveSplit.VideoAutoSplit.v0.5.2.3.zip](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases/download/0.5.2.3/LiveSplit.VideoAutoSplit.v0.5.2.3.zip)
 2. Extract the Zip, there should see 5 total ".dll" files.
-3. Navigate to where your LiveSplit is installed.  It shoul dbe in a directory named something like "LiveSplit_1.8.10" for example.  There is no proper installaiton for LiveSplit, it just runs out of the box so it could still be in your "Downloads" directory if you never moved it.
+3. Navigate to where your LiveSplit is installed.  It should be in a directory named something like "LiveSplit_1.8.10" for example.  There is no proper installaiton for LiveSplit, it just runs out of the box so it could still be in your "Downloads" directory if you never moved it.
 4. Inside of that above directory, navigate to the "Components" directory.  There should be a bunch of ".dll" files.
 5. Copy all 5 VAS dll files from step 2 into this "Components" directory.
 
