@@ -6,7 +6,7 @@ I am active in Horizon Zero Dawn and The Last Of Us (1/2) communities.  These ef
 
 The hzd.vas profile was built based on the rules on speedrun.com for the load-time definition.  In this case, quite simply, a "load" is defined whenever "Loading..." is seen in the bottom left corner of the screen.  This includes few cut scene pauses in the beginning for Any% runs, as well as every time a fast travel is performed.  
 
-This laod remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
+This load remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
 
 #### TLOU2 Load Remover
 
@@ -15,19 +15,19 @@ The rules are yet to be defined for TLOU2 speedruns, so these efforts are prelim
 2. The screen will be black.  Sometimes if long enough a gradient with moths appears.  Also sometimes a loading circle appears.  The moths will then fade to black again.  All of this is considered to be in the load.
 3. The load ends when the screen turns from completely black to the next frame where it is not black, and not the gradient w/moths.
 
-Based ont he above, this laod remover checks for when "Skip Cutscene" first disappears, then waits for the black screen to end only if it is not the gradient moths.
+Based on the above, this load remover checks for when "Skip Cutscene" first disappears, then waits for the black screen to end only if it is not the gradient moths.
 
 
 ##  Does it work?
 
 These seem to work VERY well on my end, however different setups may cause different issues.  Also, there could be some scenerios in which they break.  
 
-The HZD load remover has worked great for a few people.   So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings.  I recommend starting with hzd.vas, checking your video settings, and if all that fails then try the hzdAussie.vas file instead with minimally different tunings.
+The HZD load remover has worked great for a few people.   So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings.  I recommend starting with hzd.vas, checking your video settings, and if all that fails then try the hzdAussie.vas file which i built with minimally different tunings.
 
-The TLOU2 load remover works very strongly in starting the timer pause, i.e. the start of a load.  This is due to the strong feature set in the menus.  The load remover is however a bit weaker defining the end of a load, where sections of the screen are measured for pure black.  If the end of the laod dispplays video that is too dard, it may not detect it as the end of the load.  This is however easily fixable, but more testing and example failures will be needed.
+The TLOU2 load remover works very strongly in starting the timer pause, i.e. the start of a load.  This is due to the strong feature set in the menus.  The load remover is however a bit weaker defining the end of a load, where sections of the screen are measured for pure black.  If the end of the load displays video that is too dark, it may not detect it as the end of the load.  This is however easily fixable, but more testing and example failures will be needed.
 
 
-Basd on the above, feel free to try these tools.  LiveSplit will still continue you measure your RTA time even if your IGT gets messed up from failed load detection.  I do however ask that if you try this, expect that this is beta-test sotware and I hope that if it does fail that you can provide feedback so that I can make the tools stronger.
+Basd on the above, feel free to try these tools.  LiveSplit will still continue to measure your RTA time even if your IGT gets messed up from failed load detection.  I do however ask that if you try this, expect that this is beta-test sotware. I hope that if it does fail that you can provide feedback so that I can make the tools stronger.
 
 
 
@@ -36,7 +36,7 @@ Basd on the above, feel free to try these tools.  LiveSplit will still continue 
 
 Both the HZD and TLOU2 efforts are intended to be used for LiveSplit using the [Video Auto Splitter (VAS)](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit) tool.  Instructions for installation are already provided by the VAS github, but I will cover installation as well.
 
-The VAS is only one necessary component.  You also need to get a video source from your game into the VAS component.  I use OBS with a component called (OBS-VirtualCam)[https://github.com/CatxFish/obs-virtual-cam].  Again, instructions for installalation are provided there but they will be covered here as well.
+The VAS is only one necessary component.  You also need to get a video source from your game into the VAS component.  I use OBS with a component called [OBS-VirtualCam](https://github.com/CatxFish/obs-virtual-cam).  Again, instructions for installalation are provided there but they will be covered here as well.
 
 There may be issues in installation for different versions of software, but don't be afraid to try versions different form my own.  This is the list of versions that I use for development and testing:
 
@@ -52,11 +52,11 @@ This assumes that you already have LiveSplit installed.  If not, please visit th
 
 1. Download the Video Autosplitter v0.5.2.3: [LiveSplit.VideoAutoSplit.v0.5.2.3.zip](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases/download/0.5.2.3/LiveSplit.VideoAutoSplit.v0.5.2.3.zip)
 2. Extract the Zip, there should see 5 total ".dll" files.
-3. Navigate to where your LiveSplit is installed.  It should be in a directory named something like "LiveSplit_1.8.10" for example.  There is no proper installaiton for LiveSplit, it just runs out of the box so it could still be in your "Downloads" directory if you never moved it.
-4. Inside of that above directory, navigate to the "Components" directory.  There should be a bunch of ".dll" files.
-5. Copy all 5 VAS dll files from step 2 into this "Components" directory.
+3. Navigate to where your LiveSplit is installed.  It should be in a directory named something like "LiveSplit_1.8.10" (or different numbers for your version).  There is no proper installation tool for LiveSplit, it just runs out of the box so it could still be in your "Downloads" directory if you never moved it.
+4. Inside of the LiveSplit directory, navigate to the "Components" directory.  There should be a bunch of ".dll" files.
+5. Copy all 5 VAS .dll files from step 2 into this "Components" directory.
 
-Installation of the VAS shoul dbe complete.  You will at a minimum need to restart LiveSplit
+Installation of the VAS should be complete.  You will at a minimum need to restart LiveSplit.
 
 ## Installation of OBS-VirtualCam
 This assumes that you already have some flavor of OBS installed.  If not, please visit the [OBS release page](https://github.com/obsproject/obs-studio/releases).  Should also work with Streamlabs-OBS, but I have not personally tried it.
@@ -74,17 +74,17 @@ I recommend a reboot post-installation to avoid any headaches.  The first thing 
 #### VirtualCam in OBS setup
 
 1. Open OBS
-2. Under Scenes->Source, right click on your game capture source, then click on "Filters".
-3. Under "Effects Filters", add a new filter.  It may look like a "+" button near the bottom.  Add a filter called "VirtualCam"
-4. There are some settings here.  I leave "Horizontal Flip" and "Keep Asepct Ratio" NOT checked.  I also set "Buffered Frames" to 1.
-5. Most importantly in these settings, remember the name of "Target Camera".  For me, it is "OBS-Camera"
-6. Click on the "Start" button
+2. Under Scenes->Source, right click on your game capture source, then click on "Filters."
+3. Under "Effects Filters", add a new filter.  It may look like a "+" button near the bottom.  Add a filter called "VirtualCam."
+4. There are some settings here.  I leave "Horizontal Flip" and "Keep Aspect Ratio" NOT checked.  I also set "Buffered Frames" to 1.
+5. Most importantly in these settings, remember the name of "Target Camera."   For me, it is "OBS-Camera."
+6. Click on the "Start" button.
 
-Your game feed should now be fed to a virtual webcam with the name designated under "Target Camera".
+Your game feed should now be fed to a virtual webcam with the name designated under "Target Camera."
 
-> IMPORTANT: Every time that you close/open OBS, you will need to navigate to the VirtualCam filter and click that "Start" button.  It will NOT auto-start each time OBS starts.
+> IMPORTANT: Every time that you close/open OBS, you will need to navigate to the VirtualCam filter and click that "Start" button.  It will NOT auto-start each time OBS is restarted.
 
-> Tip: If you are unsure that this is working, you can test using any program that makes use of a webcam to check video.  For example: I use Discord and check video settings for video chat, and select the "OBS-Camera" to see if it is running.
+> Tip: If you are unsure that this is working, you can test using any program that makes use of a webcam to check video.  For example: I use Discord and check video settings for video chat preview, and select the "OBS-Camera" to see if the game feed is coming through.
 
 #### Video Auto Splitter
 
@@ -92,44 +92,49 @@ Your game feed should now be fed to a virtual webcam with the name designated un
 2. Open LiveSplit, and open your layout if not open.
 3. Right-click Live-Split, and choose "Edit Layout..."
 4. Click on the "+" button, then choose Control->Video AutoSplitter  (this item will be hidden, and not mess up anything visually in your layout)
-5. Click on "Layout Settings".  Navigate to the tab titled "Video Auto Splitter"
-6. Under "Settings" ensure that "Capture Device" represents what is set in OBS-VirtualCam's "Target Camera".  For me, it is "OBS-Camera".
-7. Still in "Settings", set the "Game Profile" to the appropriate ".vas" file (hzd.vas or tlou2.vas)
-8. Click on the "Scan Region" tab and ensure that X=0, Y=0, Width=1920, and Height=1080.  If your game is running, with OBS and VirtualCam running, you should see a preview with funny colors in this tab.
+5. Click on "Layout Settings".  Navigate to the tab titled "Video Auto Splitter."
+6. Under "Settings" ensure that "Capture Device" represents what is set in OBS-VirtualCam's "Target Camera".  For me, it is "OBS-Camera."
+7. Still in "Settings", set the "Game Profile" to the appropriate ".vas" file (hzd.vas or tlou2.vas).
+8. Click on the "Scan Region" tab and ensure that X=0, Y=0, Width=1920, and Height=1080.  If your game is running, with OBS and VirtualCam running, you should see a live preview of your game with funny colors in this tab.
 9. Click on OK, then OK again.
-10. At this stage your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.  Right-click on LiveSplit again, then select Compare Against->Game Time
+10. At this stage your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.  Right-click on LiveSplit again, then select Compare Against->Game Time.
 11. Save your layout
 
 #### PS4 Settings
 
-These load removers are based on reading the HUD in particular places.  The PS4 has the ability to change how the HUD is rendered based on system settings.  In order ensure that the HUD is in the correct spot, you will need to set the HUD to the largest setting.
+These load removers are based on reading the HUD in particular places.  The PS4 has the ability to change how the HUD is rendered based on system settings.  In order to ensure that the HUD is in the correct spot, you will need to set the HUD to the largest setting.
 
-1. In the PS4's home screen, navigate to "Settings"
-2. Go to "Sound and Screen"
-3. Select "Display Area Settings"
-4. Enlarge the setting to the maximum setting, until "Enlarge" becomes greyed
+1. In the PS4's home screen, navigate to "Settings."
+2. Go to "Sound and Screen."
+3. Select "Display Area Settings."
+4. Enlarge the setting to the maximum setting, until "Enlarge" becomes greyed.
 
 
 ## Testing
 
 With all of the above up and running and showing IGT,  try to start the timer then invoke a load.
 
-1. In HZD, simply perform a fast-travel
-2. In TLOU2, you will need to find a section where you can skip a cutscene.  Starting or loading a game from the main menu will NOT pause the timer.
+1. In HZD, simply perform a fast-travel.
+2. In TLOU2, you will need to find a section where you can perform a cutscene skip.  Starting or loading a game from the main menu will NOT pause the timer.
 
 
 
 ## Troubleshooting
 
+I will build this section more and more as people run into issues with setup.  Please contact me if you have issues with setup, installation, or if you have inconsistencies in load times.
 
 
-## Settings
+
+## My Settings
 
 The following is a set of my video settings.  If you have trouble with the efficacy of load time removal, you may check to ensure that your settings match mine:
 
 #### PS4
 
-Under: Settings->Sound and Screen->Video Output Settings->Video Output Information
+I am on a normal PS4 with an HDD.  That shouldn't matter as long as your video settings are similar.
+
+Under: Settings->Sound and Screen->Video Output Settings->Video Output Information:
+
  - Resolution: 1920 x 1080 - 60Hz
  - Color Format: RGB
  - HDR: Disabled or Not Supported
