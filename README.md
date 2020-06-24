@@ -1,6 +1,22 @@
 # Load Removers
 
-I am active in Horizon Zero Dawn and The Last Of Us (1/2) communities.  These efforts are intended to aid the communities to make live speedrunning times more compoarable and therefore, hopefully,  more enjoyable.  Also if the tools are effective enough, this will eliminate the need to manually calculate your In-Game Time (IGT) through use of a video editor, which can be a laborious task for both runners and leaderboard moderators.
+I am active in Horizon Zero Dawn and The Last Of Us (1/2) communities.  These efforts are intended to aid the communities to make live speedrunning times more comporable and therefore, hopefully,  more enjoyable.  Also if the tools are effective enough, this will eliminate the need to manually calculate your In-Game Time (IGT) through use of a video editor, which can be a laborious task for both runners and leaderboard moderators.
+
+#### HZD Load Remover
+
+The hzd.vas profile was built based on the rules on speedrun.com for the load-time definition.  In this case, quite simply, a "load" is defined whenever "Loading..." is seen in the bottom left corner of the screen.  This includes few cut scene pauses in the beginning for Any% runs, as well as every time a fast travel is performed.  
+
+This laod remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
+
+#### TLOU2 Load Remover
+
+The rules are yet to be defined for TLOU2 speedruns, so these efforts are preliminary.  It does seem to me that a loading screen may be defined as 
+1. Loading starts immediately after "Skip Cutscene" is performed.
+2. The screen will be black.  Sometimes if long enough a gradient with moths appears.  Also sometimes a loading circle appears.  The moths will then fade to black again.  All of this is considered to be in the load.
+3. The load ends when the screen turns from completely black to the next frame where it is not black, and not the gradient w/moths.
+
+Based ont he above, this laod remover checks for when "Skip Cutscene" first disappears, then waits for the black screen to end only if it is not the gradient moths.
+
 
 
 ## Requirements
