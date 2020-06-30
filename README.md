@@ -2,7 +2,7 @@
 
 Video with information and installation: [https://www.youtube.com/watch?v=lmLSUKhvSrg](https://www.youtube.com/watch?v=lmLSUKhvSrg)
 
-I am active in Horizon Zero Dawn and The Last Of Us (1/2) communities.  These efforts are intended to aid the communities to make live speedrunning times more comporable and therefore, hopefully,  more enjoyable.  Also if the tools are effective enough, this will eliminate the need to manually calculate your In-Game Time (IGT) through use of a video editor, which can be a laborious task for both runners and leaderboard moderators.
+I am active in the Horizon Zero Dawn and The Last Of Us (1/2) communities.  These efforts are intended to aid the communities to make live speedrunning times more comparable and therefore, hopefully,  more enjoyable.  If the tools are effective enough, this will eliminate the need to manually calculate your In-Game Time (IGT) through use of a video editor, which can be a laborious task for both runners and leaderboard moderators.
 
 #### HZD Load Remover
 
@@ -24,12 +24,17 @@ Based on the above, this load remover checks for when "Skip Cutscene" first disa
 
 These seem to work VERY well on my end, however different setups may cause different issues.  Also, there could be some scenerios in which they break.  
 
-The HZD load remover has worked great for a few people.   So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings.  I recommend starting with hzd.vas, checking your video settings, and if all that fails then try the hzdAussie.vas file which i built with minimally different tunings.
+The HZD load remover has worked great for a few people.   So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings.  I recommend starting with hzd.vas, checking your video settings, and if all that fails then try the hzdAussie.vas file which i built with minimally different tunings.  Currently only English is supported.
 
-The TLOU2 load remover works very strongly in starting the timer pause, i.e. the start of a load.  This is due to the strong feature set in the menus.  The load remover is however a bit weaker defining the end of a load, where sections of the screen are measured for pure black.  If the end of the load displays video that is too dark, it may not detect it as the end of the load.  This is however easily fixable, but more testing and example failures will be needed.
+- hzd.vas: Tunings that work for me.
+- hzdAussie.vas: Tunings that have worked for others, including a person that had success using PS4Share.
 
+The TLOU2 load remover works very strongly in starting the timer pause, i.e. the start of a load.  This is due to the strong feature set in the menus.  The load remover is however a bit weaker defining the end of a load, where sections of the screen are measured for pure black.  If the end of the load displays video that is too dark, it may not detect it as the end of the load.  This is however easily fixable, but more testing and example failures will be needed.  Language will matter in you game settings.
 
-Basd on the above, feel free to try these tools.  LiveSplit will still continue to measure your RTA time even if your IGT gets messed up from failed load detection.  I do however ask that if you try this, expect that this is beta-test sotware. I hope that if it does fail that you can provide feedback so that I can make the tools stronger.
+- tlou2.vas: For English menus.
+- tlou2French.vas: For French menus.
+
+Based on the above, feel free to try these tools.  LiveSplit will still continue to measure your RTA time even if your IGT gets messed up from failed load detection.  I do however ask that if you try this, expect that this is beta-test sotware. I hope that if it does fail that you can provide feedback so that I can make the tools stronger.
 
 
 
