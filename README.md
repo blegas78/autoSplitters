@@ -36,6 +36,7 @@ The TLOU2 load remover works very strongly in starting the timer pause, i.e. the
 
 Based on the above, feel free to try these tools.  LiveSplit will still continue to measure your RTA time even if your IGT gets messed up from failed load detection.  I do however ask that if you try this, expect that this is beta-test sotware. I hope that if it does fail that you can provide feedback so that I can make the tools stronger.
 
+Please see the Change Log to regarding the reason for updates to the .vas files.
 
 
 
@@ -52,6 +53,11 @@ There may be issues in installation for different versions of software, but don'
  - [OBS 25.0.4](https://github.com/obsproject/obs-studio/releases)
  - [OBS-VirtualCam 2.0.4](https://github.com/CatxFish/obs-virtual-cam/releases)
 
+I have reports from some users that have had success using PS4 share instead of a capture card.  Thank you Leiberton and Charlatan_11235 for testing!
+
+I have also heard reports that versions newer thant he above list also work.  Thank you Aquila_Ezio!
+
+Kevin700p has had trouble streaming and using the load remover at the same time.  Turns out his phone was plugged into his stream computer (a laptop) and unplugging the phone lets him do both at once.
 
 ## Installation of the LiveSplit VAS component
 
@@ -154,3 +160,17 @@ Right-click your game video capture device, then select "Properties"
  - Color Space: Default
  - Color Range: Partial
 
+
+
+##  Change Log
+
+#### July 20, 2020: 
+
+On PDub's stream there were 2 failures where moths unpaused the timer.  This is the first citing of a failure from moths being perfectly aligned that caused some sensing values to exceed values beyond expectations.  To find this twice in one run, PDub basically found a gunicorn.  This has now been fixed and it is recommended for everyone to use the latest vas files.
+
+- Testing: Clips were made in each instance and were used to successfully reproduce the error.
+- Rectification: Threshold values for the moths were increased to increase robustness.  Once the fix was put into place, the timer remained paused following identical tests.
+
+These are the clips of each laod remover failure, which have now been fixed:
+- [Bath Moths 1](https://www.twitch.tv/pdub/clip/UgliestInventiveSrirachaM4xHeh)
+- [Bad Moths 2](https://www.twitch.tv/pdub/clip/BrainyAmazingTomatoPeteZarollTie)
