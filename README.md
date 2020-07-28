@@ -4,39 +4,13 @@ Video with information and installation: [https://www.youtube.com/watch?v=lmLSUK
 
 I am active in the Horizon Zero Dawn and The Last Of Us (1/2) communities.  These efforts are intended to aid the communities to make live speedrunning times more comparable and therefore, hopefully,  more enjoyable.  If the tools are effective enough, this will eliminate the need to manually calculate your In-Game Time (IGT) through use of a video editor, which can be a laborious task for both runners and leaderboard moderators.
 
-#### HZD Load Remover
-
-The hzd.vas profile was built based on the rules on speedrun.com for the load-time definition.  In this case, quite simply, a "load" is defined whenever "Loading..." is seen in the bottom left corner of the screen.  This includes few cut scene pauses in the beginning for Any% runs, as well as every time a fast travel is performed.  
-
-This load remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
-
-#### TLOU2 Load Remover
-
-The rules are yet to be defined for TLOU2 speedruns, so these efforts are preliminary.  It does seem to me that a loading screen may be defined as 
-1. Loading starts immediately after "Skip Cutscene" is performed.
-2. The screen will be black.  Sometimes if long enough a gradient with moths appears.  Also sometimes a loading circle appears.  The moths will then fade to black again.  All of this is considered to be in the load.
-3. The load ends when the screen turns from completely black to the next frame where it is not black, and not the gradient w/moths.
-
-Based on the above, this load remover checks for when "Skip Cutscene" first disappears, then waits for the black screen to end only if it is not the gradient moths.
-
 
 ##  Does it work?
 
-These seem to work VERY well on my end, however different setups may cause different issues.  Also, there could be some scenerios in which they break.  
+These seem to work VERY well on my end, however different setups may cause different issues.  Also there could be some scenerios in which they break.  Please see information in either game to learn more about known issues, if any exist.
 
-The HZD load remover has worked great for a few people.   So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings.  I recommend starting with hzd.vas, checking your video settings, and if all that fails then try the hzdAussie.vas file which i built with minimally different tunings.  Currently only English is supported.
 
-- hzd.vas: Tunings that work for me.
-- hzdAussie.vas: Tunings that have worked for others, including a person that had success using PS4Share.
-
-The TLOU2 load remover works very strongly in starting the timer pause, i.e. the start of a load.  This is due to the strong feature set in the menus.  The load remover is however a bit weaker defining the end of a load, where sections of the screen are measured for pure black.  If the end of the load displays video that is too dark, it may not detect it as the end of the load.  This is however easily fixable, but more testing and example failures will be needed.  Language will matter in you game settings.
-
-- tlou2.vas: For English menus.
-- tlou2French.vas: For French menus.
-
-Based on the above, feel free to try these tools.  LiveSplit will still continue to measure your RTA time even if your IGT gets messed up from failed load detection.  I do however ask that if you try this, expect that this is beta-test sotware. I hope that if it does fail that you can provide feedback so that I can make the tools stronger.
-
-Please see the Change Log to regarding the reason for updates to the .vas files.
+Please see the Change Log in each laod remover description regarding the reason for updates to .vas files.
 
 
 
@@ -55,7 +29,7 @@ There may be issues in installation for different versions of software, but don'
 
 I have reports from some users that have had success using PS4 share instead of a capture card.  Thank you Leiberton and Charlatan_11235 for testing!
 
-I have also heard reports that versions newer thant he above list also work.  Thank you Aquila_Ezio!
+I have also heard reports that versions newer than the above list also work.  Thank you Aquila_Ezio!
 
 Kevin700p has had trouble streaming and using the load remover at the same time.  Turns out his phone was plugged into his stream computer (a laptop) and unplugging the phone lets him do both at once.
 
@@ -125,10 +99,8 @@ These load removers are based on reading the HUD in particular places.  The PS4 
 
 ## Testing
 
-With all of the above up and running and showing IGT,  try to start the timer then invoke a load.
-
-1. In HZD, simply perform a fast-travel.
-2. In TLOU2, you will need to find a section where you can perform a cutscene skip.  Starting or loading a game from the main menu will NOT pause the timer.
+I *HIGHLY* Recommend testing this before attempting a run each day by doing a quick test.
+With all of the above up and running and showing IGT,  try to start the timer then invoke a load based on whater the definition of a load is for your game.
 
 
 
@@ -136,7 +108,11 @@ With all of the above up and running and showing IGT,  try to start the timer th
 
 I will build this section more and more as people run into issues with setup.  Please contact me if you have issues with setup, installation, or if you have inconsistencies in load times.
 
+- Problem: Load pauses worked, but in the middle of the run they stop pausing or unpausing.
+- Solution: In LiveSplit restart the load remover by: Right-Click -> Open Layout -> <select your layout>
 
+- Problem:  I regularly get crashes in the middle of runs:
+- Solution: Your CPU may be overloaded.  Try reducing your CPU load by closing unnecessary programs.  I have had to eliminate Streamlabs Emote Walls since that regularly consumes 20% CPU on my end.  I have also heard success regarding stopping local recordings (this sucks but all hardware is different).
 
 ## My Settings
 
@@ -151,6 +127,16 @@ Under: Settings->Sound and Screen->Video Output Settings->Video Output Informati
  - Resolution: 1920 x 1080 - 60Hz
  - Color Format: RGB
  - HDR: Disabled or Not Supported
+ 
+ #### Capture Card/ PS4Share Settings
+ 
+ You may need to configure your card itself, like using Elgato's software, to be at 1920x1080 resolution.  
+ 
+ - PDub had his set at 1280x720 and it caused issues.
+
+If you are using PS4Share instead of a capture card and have issues with a titlted screen, try the following to fix:
+
+ - "One thing that is working for me is to not start the virtual cam with livesplit closed, when i do that i get the virtual cam tilted" -charlatan_11235
 
 #### OBS Capture settings
 
@@ -160,17 +146,30 @@ Right-click your game video capture device, then select "Properties"
  - Color Space: Default
  - Color Range: Partial
 
+## Contributors
 
+Though I'm the one building the configuration files I simply do not have the resources to test every scenario and every configuration.  I greatly appreciate when others report on problems so that I can make these tools better.  
 
-##  Change Log
+#### HZD testers
+- ElkjaerTV (Timing verification)
+- everyday_aussie (Timing verification, reason for the Aussie .vas)
+- charlatan_11235 (Tested working function of PS4Share)
+- leiberton (Tested working function of PS4Share)
+- Aquila_Ezio (Found success in newer software versions)
 
-#### July 20, 2020: 
+#### TLOU2
+- DemonicRobots (Helped spearhead and test initial load remover)
+- PDub (Provided setup feedback, is my regular guinnea pig)
+- Kevin700p (Reason for the French version, helped point out potential hardware issues)
+- mattmatt10111 (Has had crashes, the reason for doing optimization efforts.  Found success thorugh stopping local recordings.)
 
-On PDub's stream there were 2 failures where moths unpaused the timer.  This is the first citing of a failure from moths being perfectly aligned that caused some sensing values to exceed values beyond expectations.  To find this twice in one run, PDub basically found a gunicorn.  This has now been fixed and it is recommended for everyone to use the latest vas files.
+#### Donators
 
-- Testing: Clips were made in each instance and were used to successfully reproduce the error.
-- Rectification: Threshold values for the moths were increased to increase robustness.  Once the fix was put into place, the timer remained paused following identical tests.
+- TimRoc ($30.00)
+- PDub ($25.00)
 
-These are the clips of each laod remover failure, which have now been fixed:
-- [Bath Moths 1](https://www.twitch.tv/pdub/clip/UgliestInventiveSrirachaM4xHeh)
-- [Bad Moths 2](https://www.twitch.tv/pdub/clip/BrainyAmazingTomatoPeteZarollTie)
+I am doing this purely to improve the quality of speedrunning these games and am completely happy to contribute to the respect communities.  Therefore I am providing these efforts for free for everyone and am thriled that people will better enjoy speed running the games.  I do not ask for donations.  I do not need monetary support to continue development on these tools.  Having said that, I do believe in patronage and am *very* grateful when others support my efforts.  I have also been asked by PDub to provide a method to support my efforts.  If you feel compelled to support then you may do so either through my Twitch or through the streamlabs donations links:
+
+ - [https://www.twitch.tv/blegas78](https://www.twitch.tv/blegas78)
+ - [https://streamlabs.com/blegas78](https://streamlabs.com/blegas78)
+
