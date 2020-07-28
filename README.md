@@ -109,9 +109,9 @@ With all of the above up and running and showing IGT,  try to start the timer th
 I will build this section more and more as people run into issues with setup.  Please contact me if you have issues with setup, installation, or if you have inconsistencies in load times.
 
 - Problem: Load pauses worked, but in the middle of the run they stop pausing or unpausing.
-- Solution: In LiveSplit restart the load remover by: Right-Click -> Open Layout -> <select your layout>
+- Solution: In LiveSplit restart the load remover by: Right-Click - Open Layout - select your layout
 
-- Problem:  I regularly get crashes in the middle of runs:
+- Problem:  I regularly get crashes in the middle of runs.
 - Solution: Your CPU may be overloaded.  Try reducing your CPU load by closing unnecessary programs.  I have had to eliminate Streamlabs Emote Walls since that regularly consumes 20% CPU on my end.  I have also heard success regarding stopping local recordings (this sucks but all hardware is different).
 
 ## My Settings
