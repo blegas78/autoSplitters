@@ -148,25 +148,25 @@ Right-click your game video capture device, then select "Properties"
 
 ## Contributors
 
-Though I'm the one building the configuration files I simply do not have the resources to test every scenario and every configuration.  I greatly appreciate when others report on problems so that I can make these tools better.  
+Though I'm the one building the configuration files I simply do not have the resources to test every scenario and every configuration.  I greatly appreciate when others report on problems so that I can make these tools better.  I view development on these tools as a community effort.
 
-#### HZD testers
-- ElkjaerTV (Timing verification)
-- everyday_aussie (Timing verification, reason for the Aussie .vas)
-- charlatan_11235 (Tested working function of PS4Share)
-- leiberton (Tested working function of PS4Share)
-- Aquila_Ezio (Found success in newer software versions)
+#### HZD
+- [ElkjaerTV](https://www.twitch.tv/elkjaertv) (Timing verification)
+- [everyday_aussie](https://www.twitch.tv/everydayaussie) (Timing verification, reason for the Aussie .vas)
+- [charlatan_11235](https://www.twitch.tv/charlatan_11235) (Tested working function of PS4Share)
+- [leiberton](https://www.twitch.tv/leiberton) (Tested working function of PS4Share)
+- [Aquila_Ezio](https://www.twitch.tv/aquila_ezio) (Found success in newer software versions)
 
 #### TLOU2
-- DemonicRobots (Helped spearhead and test initial load remover)
-- PDub (Provided setup feedback, is my regular guinnea pig)
-- Kevin700p (Reason for the French version, helped point out potential hardware issues)
-- mattmatt10111 (Has had crashes, the reason for doing optimization efforts.  Found success thorugh stopping local recordings.)
+- [DemonicRobots](https://www.twitch.tv/demonicrobots) (Helped spearhead and test initial load remover)
+- [PDub](https://www.twitch.tv/pdub) (Provided setup feedback, is my regular guinnea pig)
+- [Kevin700p](https://www.twitch.tv/kevin700p) (Reason for the French version, helped point out potential hardware issues)
+- [mattmatt10111](https://www.twitch.tv/mattmatt10111) (Has had crashes, the reason for doing optimization efforts.  Found success thorugh stopping local recordings.)
 
 #### Donators
 
-- TimRoc ($30.00)
-- PDub ($25.00)
+- [TimRoc](https://www.twitch.tv/timroc) ($30.00)
+- [PDub](https://www.twitch.tv/pdub) ($25.00)
 
 I am doing this purely to improve the quality of speedrunning these games and am completely happy to contribute to the respect communities.  Therefore I am providing these efforts for free for everyone and am thriled that people will better enjoy speed running the games.  I do not ask for donations.  I do not need monetary support to continue development on these tools.  Having said that, I do believe in patronage and am *very* grateful when others support my efforts.  I have also been asked by PDub to provide a method to support my efforts.  If you feel compelled to support then you may do so either through my Twitch or through the streamlabs donations links:
 
