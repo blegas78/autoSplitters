@@ -47,6 +47,10 @@ There are 2 loading types for this game so you should test both.  Here's how to 
 
 ##  Change Log
 
+#### May 23, 2021:
+
+Added load remover for encounter% challenge runs.  Also added source for 60fps-based time-skewed load remover to match ND IGT though it needs work
+
 #### July 28, 2020:
 
 ###### New Features:

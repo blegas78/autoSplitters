@@ -10,7 +10,7 @@ I am active in the Horizon Zero Dawn and The Last Of Us (1/2) communities.  Thes
 These seem to work VERY well on my end, however different setups may cause different issues.  Also there could be some scenerios in which they break.  Please see information in either game to learn more about known issues, if any exist.
 
 
-Please see the Change Log in each laod remover description regarding the reason for updates to .vas files.
+Please also see the Change Log in each laod remover description regarding the reason for updates to .vas files.
 
 
 
@@ -100,7 +100,7 @@ These load removers are based on reading the HUD in particular places.  The PS4 
 ## Testing
 
 I *HIGHLY* Recommend testing this before attempting a run each day by doing a quick test.
-With all of the above up and running and showing IGT,  try to start the timer then invoke a load based on whater the definition of a load is for your game.
+With all of the above up and running and showing IGT,  try to start the timer then invoke a load based on whatever the definition of a load is for your game.
 
 
 
@@ -113,6 +113,8 @@ I will build this section more and more as people run into issues with setup.  P
 
 - Problem:  I regularly get crashes in the middle of runs.
 - Solution: Your CPU may be overloaded.  Try reducing your CPU load by closing unnecessary programs.  I have had to eliminate Streamlabs Emote Walls since that regularly consumes 20% CPU on my end.  I have also heard success regarding stopping local recordings (this sucks but all hardware is different).
+
+
 
 ## My Settings
 
@@ -162,9 +164,13 @@ Though I'm the one building the configuration files I simply do not have the res
 - [PDub](https://www.twitch.tv/pdub) (Provided setup feedback, is my regular guinnea pig)
 - [Kevin700p](https://www.twitch.tv/kevin700p) (Reason for the French version, helped point out potential hardware issues)
 - [mattmatt10111](https://www.twitch.tv/mattmatt10111) (Has had crashes, the reason for doing optimization efforts.  Found success thorugh stopping local recordings.)
+- [ScarlettTheHuman](https://www.twitch.tv/scarlettthehuman) (Has done a tremendous amount of modeling/reverse engineering to figure out how ND IGT works.)
+- [happy_asteroid](https://www.twitch.tv/happy_asteroid) (Tester extraordinare, helped gather a ton of data to validate ND IGT models)
+- [https://github.com/alexjlockwood](https://github.com/alexjlockwood) (Tester extraordinare, helped gather a ton of data to validate ND IGT models)
 
 #### Donators
 
+- [Aquila_Ezio](https://www.twitch.tv/aquila_ezio) ($40.00)
 - [TimRoc](https://www.twitch.tv/timroc) ($30.00)
 - [PDub](https://www.twitch.tv/pdub) ($25.00)
 
