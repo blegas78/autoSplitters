@@ -202,29 +202,29 @@
               </Watcher>
             </Watches>
         </WatchZone>
-<!--
-          <WatchZone>
-            <Name>black3</Name>
-            <Geometry>
-              <X>200</X>
-              <Y>350</Y>
-              <Width>80</Width>
-              <Height>40</Height>
-            </Geometry>
-            <Watches>
-              <Watcher>
-                <Name>loading</Name>
-              <ErrorMetric>PeakAbsolute</ErrorMetric>
-		<Equalize>false</Equalize>
-                <WatchImages>
-                  <WatchImage>
-                    <FilePath>imgs\black.png</FilePath>
-                  </WatchImage>
-                </WatchImages>
-              </Watcher>
-            </Watches>
+
+        <WatchZone>
+          <Name>black3</Name>
+          <Geometry>
+            <X>1840</X>
+            <Y>1040</Y>
+            <Width>80</Width>
+            <Height>40</Height>
+          </Geometry>
+          <Watches>
+            <Watcher>
+              <Name>loading</Name>
+            <ErrorMetric>PeakAbsolute</ErrorMetric>
+              <Equalize>false</Equalize>
+              <WatchImages>
+                <WatchImage>
+                  <FilePath>imgs\black.png</FilePath>
+                </WatchImage>
+              </WatchImages>
+            </Watcher>
+          </Watches>
         </WatchZone>
--->
+
           <WatchZone>
             <Name>black4</Name>
             <Geometry>
