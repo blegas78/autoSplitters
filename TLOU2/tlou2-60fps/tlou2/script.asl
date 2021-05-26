@@ -152,11 +152,11 @@ update
 
 		// This performs an effective ceil() on seconds:
 		var millisecondsToAdd = 1000 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
-		if(millisecondsToAdd < 1000) {
+		//if(millisecondsToAdd < 1000) {
 			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
-			vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds;
 			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
-		}
+			vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
+		//}
 	}
 
 	// Method 1 for ND IGT time correction: Frame counting -- FAILS
@@ -182,34 +182,36 @@ update
 	// }
 
 	// Method 2 for ND IGT time correction: asynchronous system time-based correction
-	// This checks for the total number of Ticks (units of 100ns)
+	// This checks for the total number of milliseconds.  Ticks could be used (units of 100ns) but result in integer overflow errors
 	// 60fps:
 	// Right now for 60fps we modify the time after 60 frames, where 60*1/60 = 1.0 seconds
 	// Each correction is at the truncated amount * the 60 frames.  So 60*0.000666666 = 0.040
 	// Because time will be corrected, the next tick will be at:  oldTicks + (1.0 - 0.040)*1000 = oldTicks + 960
+	// 59.94fps:
+	// Right now for 29.97fps we modify the time after 60 frames, where 60*1/59.94 = 1.001001001 seconds
+	// Each correction is at the truncated amount * the 60 frames.  So 60*(1/59.94-0.016) ~= 60*0.00068335001 = 0.041001001
+	// Because time will be corrected, the next tick will be at:  oldTicks + (60*1/59.94 - 60*(1/59.94-0.016))*1000 = oldTicks + 960
+	// Note on imprecision: rounding the milliseconds from 41.001001 to 41 results in an error of 1.88 seconds over 5 hours
 	// 30fps:
 	// Right now for 30fps we modify the time after 30 frames, where 30*1/30 = 1.0 seconds
 	// Each correction is at the truncated amount * the 30 frames.  So 30*0.0003333333 = 0.010
 	// Because time will be corrected, the next tick will be at:  oldTicks + (1.0 - 0.010)*1000 = oldTicks + 990
 	// 29.97fps:
 	// Right now for 29.97fps we modify the time after 30 frames, where 30*1/29.97 = 1.001001001 seconds
-	// Each correction is at the truncated amount * the 30 frames.  So 30*0.0003333333 = 0.010
-	// Because time will be corrected, the next tick will be at:  oldTicks + (30*1/29.97 - 0.010)*1000 = oldTicks + 991.001001001
+	// Each correction is at the truncated amount * the 30 frames.  So 30*(1/29.97-0.033) ~= 30*0.00036670003 = 0.011001001
+	// Because time will be corrected, the next tick will be at:  oldTicks + (30*1/29.97 - 30*(1/29.97-0.033))*1000 = oldTicks + 990
+	// Note on imprecision: rounding the milliseconds from 11.001001 to 11 results in an error of 1.82 seconds over 5 hours
 	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
 		// 60-fps:
-		// vars.ticksForTimeCorrection += 960;
-		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -40) );
-		//30fps:
-		vars.ticksForTimeCorrection += 991;
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -10) );
+		vars.ticksForTimeCorrection += 960;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
+		// 29.97fps:
+		// vars.ticksForTimeCorrection += 990;
+		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
 	}
-	// 60fps tick count reset at start of IGT:
-	// if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalSeconds < 1) {
-	// 	vars.ticksForTimeCorrection = 1;
-	// }
-	// 30fps tick count reset at start of IGT:
-	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 991) {
-	 	vars.ticksForTimeCorrection = 991;
+	// At start of IGT, reset the comparison for time correction:
+	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 400) {
+	 	vars.ticksForTimeCorrection = 500; // we will start right in the middle at 0.5 seconds toi adjust time
 	}
 
 
