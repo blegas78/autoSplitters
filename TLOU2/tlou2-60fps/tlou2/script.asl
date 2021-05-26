@@ -1,7 +1,12 @@
 init
 {
-	vars.frameCounter = 0;
+	//ars.frameCounterv = 0;
 	vars.currentlyLoading = false;
+
+	// vars.fps = 0;//0.0;
+	//vars.oldTime = TimeSpan.Zero;
+
+	vars.ticksForTimeCorrection = 0;
 
 	vars.timerModel = new TimerModel { CurrentState = timer };
 
@@ -26,6 +31,35 @@ init
 	vars.waitingDeathEnd = false;
 	vars.deathRising = false;
 	vars.deathLoad = false;
+}
+
+reset 
+{
+/*
+	vars.currentlyLoading = false;
+	vars.ticksForTimeCorrection = 480000;
+
+	vars.skipFalling = false;
+	vars.restartFalling = false;
+	vars.skipWasPrimed = false;
+	vars.restartWasPrimed = false;
+
+	vars.moths = false;
+	vars.waitingMothsStart = false;
+	vars.waitingMothsEnd = false;
+
+	vars.isBlack = false;
+	vars.definitelyNotMoths = false;
+	vars.blackness = 0.0;
+	vars.waitingForBlackEnd = false;
+
+	vars.loadingStarted = false;
+
+	vars.backShown = false;
+
+	vars.waitingDeathEnd = false;
+	vars.deathRising = false;
+	vars.deathLoad = false; */
 }
 
 update
@@ -103,19 +137,59 @@ update
 
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
 	if(vars.restartFalling) {	// Only do this for RE/RC, not Skip cutscenes
+		vars.ticksForTimeCorrection += 990;	// we add a full second but need to make sure to offset time adjustments
 		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 1, 0) );
 	}
 
+	// Method 1 for ND IGT time correction: Frame counting -- FAILS
 	// Every 3 frames, we subract off the truncated time that ND IGT does not acocunt for
 	// at 60fps: frameTime = 1/60 = 0.016666666...s = 16.666...ms
 	// Truncated at the millisecond level means ND is only adding 16ms per frame
 	// So to correct LiveSplit time, we need to remove 0.6666...ms for each frame
 	// However since we can only remove at the millisecond level with TimeSpan we remove at every 3 frames
 	// the amount to be removed is 3* 0.66666ms = 2ms
-	if(!vars.currentlyLoading && vars.frameCounter++ >= 2) {
-		vars.frameCounter = 0;
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -2) );
+	//
+	// This method FAILS because the pipeline of PS -> OBS-> Virtualcam -> VAS may have frame process drops
+	// This means that not enough time gets remove.  On my systedm it's ~1% off
+	// if(!vars.currentlyLoading && vars.frameCounter++ >= 3) {
+	// 	vars.frameCounter = 1;
+	// 	vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -2) );
+	// }
+
+	// The below will measure the incoming fps every 60 frames (not dependence on frameCounter, uncommenting this will break other things)
+	// if(!vars.currentlyLoading && vars.frameCounter++ >= 60) {
+	// 	vars.frameCounter = 1;
+	// 	vars.fps = 60.0*10000000.0/(float)(vars.timerModel.CurrentState.CurrentTime.GameTime.Ticks - vars.oldTime.Ticks);
+	// 	vars.oldTime = vars.timerModel.CurrentState.CurrentTime.GameTime;
+	// }
+
+	// Method 2 for ND IGT time correction: asynchronous system time-based correction
+	// This checks for the total number of Ticks (units of 100ns)
+	// 60fps:
+	// Right now for 60fps we modify the time after 3 frames, where 3*1/60 = 0.05 seconds
+	// Each correction is at the truncated amount * the 3 frames.  So 3*0.000666666 = 0.002
+	// Because time will be corrected, the next tick will be at:  oldTicks + (0.050 - 0.002)*10000000 = oldTicks + 480000
+	// 30fps:
+	// Right now for 30fps we modify the time after 3 frames, where 3*1/30 = 0.1 seconds
+	// Each correction is at the truncated amount * the 3 frames.  So 3*0.0003333333 = 0.001
+	// Because time will be corrected, the next tick will be at:  oldTicks + (0.100 - 0.001)*10000000 = oldTicks + 990000
+	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
+		// 60-fps:
+		// vars.ticksForTimeCorrection += 1;
+		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -40) );
+		//30fps:
+		vars.ticksForTimeCorrection += 990;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -10) );
 	}
+	// 60fps tick count reset at start of IGT:
+	// if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalSeconds < 1) {
+	// 	vars.ticksForTimeCorrection = 1;
+	// }
+	// 30fps tick count reset at start of IGT:
+	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 990) {
+	 	vars.ticksForTimeCorrection = 990;
+	}
+
 
 	// Hysteresis on the "NEXT" in death loading due to fade-in: 
 	// TODO: This appears to not work anymore, maybe due to a patch and changed HUD?
