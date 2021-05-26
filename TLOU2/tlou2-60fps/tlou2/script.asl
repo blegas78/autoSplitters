@@ -73,34 +73,24 @@ update
 		// vars.blackness corresponds to a value where the lower the value, the more black the measured areas
 		// This is done using the sum of the squared errors
 		// The value of 94.1176 was found empirically using LiveSplit.
-		// Unsure why features[...].current will go either both up or down when non-black, but this seems to work
-
-		var black1 = features["black1"].current;
-		var black2 = features["black2"].current;
-		var black3 = features["black3"].current;
-		var black4 = features["black4"].current;
-
-		vars.blackness = Math.Pow(black1 - 94.1176, 2.0) + 
-				 Math.Pow(black2 - 94.1176, 2.0) + 
-				 Math.Pow(black3 - 94.1176, 2.0) + 
-				 Math.Pow(black4 - 94.1176, 2.0);
+		// Unsure why features[...].current will go either both up or down when non-black, but this seems to work 
+		vars.blackness =	Math.Pow( features["black1"].current - 94.1176, 2.0) + 
+					Math.Pow( features["black2"].current - 94.1176, 2.0) + 
+					//Math.Pow( features["black3"].current - 94.1176, 2.0) + 
+					Math.Pow( features["black4"].current - 94.1176, 2.0);
 	
 		// Designates when the screen is absolutely black:
 		vars.isBlack  = vars.blackness <= 1.0;
 
-		// Subtract the worst match in case a loading screen moth flies under one of them.
-		var minBlack = Math.Min(black1, Math.Min(black2, Math.Min(black3, black4)));
-		var mothBlackness = vars.blackness - Math.Pow(minBlack - 94.1176, 2.0);
-
 		// The following uses the same blackness value to determine the likelihood that the curent screen is not moths
 		// This is where moth RNG can break the laod remover, perhaps there is better logic or black probe placement 
-		//vars.definitelyNotMoths = mothBlackness > 1000.0;	// Failed at 1345 from PDub: https://www.twitch.tv/pdub/clip/UgliestInventiveSrirachaM4xHeh
+		//vars.definitelyNotMoths =  vars.blackness > 1000.0;	// Failed at 1345 from PDub: https://www.twitch.tv/pdub/clip/UgliestInventiveSrirachaM4xHeh
 								 	// Failed at 1020 from PDub: https://www.twitch.tv/pdub/clip/BrainyAmazingTomatoPeteZarollTie
 									// Per the above 2 failures, moving threshold to 1500.  At final Ellie guitar, value should be at ~2000
-		//vars.definitelyNotMoths = mothBlackness > 1500.0;	// Failed at 1458 from PDub: https://clips.twitch.tv/CharmingPoisedLocustOhMyDog
+		//vars.definitelyNotMoths =  vars.blackness > 1500.0;	// Failed at 1458 from PDub: https://clips.twitch.tv/CharmingPoisedLocustOhMyDog
 									// Per the above, change to 1750.  Also moved black4 left 160 pixels left, further from moths.
 									// Similarly, also moved black1 a bit left and down
-		vars.definitelyNotMoths = mothBlackness > 1750.0;
+		vars.definitelyNotMoths =  vars.blackness > 1750.0;
 
 	}
 
@@ -176,16 +166,16 @@ update
 	// Method 2 for ND IGT time correction: asynchronous system time-based correction
 	// This checks for the total number of Ticks (units of 100ns)
 	// 60fps:
-	// Right now for 60fps we modify the time after 3 frames, where 3*1/60 = 0.05 seconds
-	// Each correction is at the truncated amount * the 3 frames.  So 3*0.000666666 = 0.002
-	// Because time will be corrected, the next tick will be at:  oldTicks + (0.050 - 0.002)*10000000 = oldTicks + 480000
+	// Right now for 60fps we modify the time after 60 frames, where 60*1/60 = 1.0 seconds
+	// Each correction is at the truncated amount * the 60 frames.  So 60*0.000666666 = 0.040
+	// Because time will be corrected, the next tick will be at:  oldTicks + (1.0 - 0.040)*1000 = oldTicks + 960
 	// 30fps:
-	// Right now for 30fps we modify the time after 3 frames, where 3*1/30 = 0.1 seconds
-	// Each correction is at the truncated amount * the 3 frames.  So 3*0.0003333333 = 0.001
-	// Because time will be corrected, the next tick will be at:  oldTicks + (0.100 - 0.001)*10000000 = oldTicks + 990000
+	// Right now for 30fps we modify the time after 30 frames, where 30*1/30 = 1.0 seconds
+	// Each correction is at the truncated amount * the 30 frames.  So 30*0.0003333333 = 0.010
+	// Because time will be corrected, the next tick will be at:  oldTicks + (1.0 - 0.010)*1000 = oldTicks + 990
 	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
 		// 60-fps:
-		// vars.ticksForTimeCorrection += 1;
+		// vars.ticksForTimeCorrection += 960;
 		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -40) );
 		//30fps:
 		vars.ticksForTimeCorrection += 990;
