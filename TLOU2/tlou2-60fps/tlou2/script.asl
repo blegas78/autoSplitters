@@ -151,7 +151,7 @@ update
 		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 1, 0) );
 
 		// This performs an effective ceil() on seconds:
-		var millisecondsToAdd = 1000 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
+		var millisecondsToAdd = 1500 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
 		//if(millisecondsToAdd < 1000) {
 			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
 			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
@@ -203,11 +203,11 @@ update
 	// Note on imprecision: rounding the milliseconds from 11.001001 to 11 results in an error of 1.82 seconds over 5 hours
 	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
 		// 60-fps:
-		vars.ticksForTimeCorrection += 960;
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
+		// vars.ticksForTimeCorrection += 960;
+		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
 		// 29.97fps:
-		// vars.ticksForTimeCorrection += 990;
-		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
+		vars.ticksForTimeCorrection += 990;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
 	}
 	// At start of IGT, reset the comparison for time correction:
 	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 400) {
