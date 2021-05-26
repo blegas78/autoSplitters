@@ -147,8 +147,16 @@ update
 
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
 	if(vars.restartFalling) {	// Only do this for RE/RC, not Skip cutscenes
-		vars.ticksForTimeCorrection += 990;	// we add a full second but need to make sure to offset time adjustments
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 1, 0) );
+		//vars.ticksForTimeCorrection += 990;	// we add a full second but need to make sure to offset time adjustments
+		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 1, 0) );
+
+		// This performs an effective ceil() on seconds:
+		var millisecondsToAdd = 1000 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
+		if(millisecondsToAdd < 1000) {
+			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
+			vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds;
+			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
+		}
 	}
 
 	// Method 1 for ND IGT time correction: Frame counting -- FAILS
@@ -183,12 +191,16 @@ update
 	// Right now for 30fps we modify the time after 30 frames, where 30*1/30 = 1.0 seconds
 	// Each correction is at the truncated amount * the 30 frames.  So 30*0.0003333333 = 0.010
 	// Because time will be corrected, the next tick will be at:  oldTicks + (1.0 - 0.010)*1000 = oldTicks + 990
+	// 29.97fps:
+	// Right now for 29.97fps we modify the time after 30 frames, where 30*1/29.97 = 1.001001001 seconds
+	// Each correction is at the truncated amount * the 30 frames.  So 30*0.0003333333 = 0.010
+	// Because time will be corrected, the next tick will be at:  oldTicks + (30*1/29.97 - 0.010)*1000 = oldTicks + 991.001001001
 	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
 		// 60-fps:
 		// vars.ticksForTimeCorrection += 960;
 		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -40) );
 		//30fps:
-		vars.ticksForTimeCorrection += 990;
+		vars.ticksForTimeCorrection += 991;
 		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -10) );
 	}
 	// 60fps tick count reset at start of IGT:
@@ -196,8 +208,8 @@ update
 	// 	vars.ticksForTimeCorrection = 1;
 	// }
 	// 30fps tick count reset at start of IGT:
-	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 990) {
-	 	vars.ticksForTimeCorrection = 990;
+	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 991) {
+	 	vars.ticksForTimeCorrection = 991;
 	}
 
 
