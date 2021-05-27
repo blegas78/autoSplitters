@@ -146,7 +146,7 @@ update
 
 
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
-	if(vars.restartFalling) {	// Only do this for RE/RC, not Skip cutscenes
+	if(vars.restartFalling || vars.skipFalling) {	// Only do this for RE/RC, not Skip cutscenes
 		//vars.ticksForTimeCorrection += 990;	// we add a full second but need to make sure to offset time adjustments
 		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 1, 0) );
 
@@ -203,11 +203,11 @@ update
 	// Note on imprecision: rounding the milliseconds from 11.001001 to 11 results in an error of 1.82 seconds over 5 hours
 	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
 		// 60-fps:
-		// vars.ticksForTimeCorrection += 960;
-		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
+		vars.ticksForTimeCorrection += 960;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
 		// 29.97fps:
-		vars.ticksForTimeCorrection += 990;
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
+		//vars.ticksForTimeCorrection += 990;
+		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
 	}
 	// At start of IGT, reset the comparison for time correction:
 	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 400) {
