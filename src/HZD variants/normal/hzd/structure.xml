@@ -7,7 +7,9 @@
       <Geometry>
         <Width>1920</Width>
         <Height>1080</Height>
-        <!-- How about we make the entire scan region tinier (like 200x100) and place it right in the bottom left corner ? -->
+        <!--
+          How about we make the entire scan region tinier (like 200x100) and place it right in the bottom left corner ?
+        -->
       </Geometry>
       <WatchZones>
 
@@ -32,26 +34,26 @@
           </Watches>
         </WatchZone>
 
-        <!--WatchZone>
-            <Name>isLoadinga</Name>
-            <Geometry>
-              <X>99</X>
-              <Y>976</Y>
-              <Width>115</Width>
-              <Height>25</Height>
-            </Geometry>
-            <Watches>
-              <Watcher>
+        <WatchZone>
+          <Name>isLoadinga</Name>
+          <Geometry>
+            <X>99</X>
+            <Y>976</Y>
+            <Width>115</Width>
+            <Height>25</Height>
+          </Geometry>
+          <Watches>
+            <Watcher>
               <ErrorMetric>PeakAbsolute</ErrorMetric>
-                <Name>loadinga</Name>
-                <WatchImages>
-                  <WatchImage>
-                    <FilePath>imgs\loadinga.png</FilePath>
-                  </WatchImage>
-                </WatchImages>
-              </Watcher>
-            </Watches>
-        </WatchZone-->
+              <Name>loadinga</Name>
+              <WatchImages>
+                <WatchImage>
+                  <FilePath>imgs\loadinga.png</FilePath>
+                </WatchImage>
+              </WatchImages>
+            </Watcher>
+          </Watches>
+        </WatchZone>
 
       </WatchZones>
     </Screen>
