@@ -7,7 +7,6 @@ The hzd.vas profile was built based on the rules on speedrun.com for the load-ti
 This load remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
 
 
-
 ##  Does it work?
 
 These seem to work VERY well on my end, however different setups may cause different issues.  Also there could be some scenerios in which they break.  
@@ -24,12 +23,18 @@ Please see the Change Log to regarding the reason for updates to the .vas files.
 ## Testing
 
 I *HIGHLY* Recommend testing this before attempting a run each day by doing a quick test.
-With all of the above up and running and showing IGT,  try to start the timer then invoke a load.
+With all of the above up and running and showing IGT,  try to start the timer then invoke a load by simply performing a fast-travel.
 
-1. In HZD, simply perform a fast-travel.
-
+ - VAS Scan Region settings
+   - X is set to 99
+   - Y is set to 976
+   - Width is set to 115
+   - Height is set to 25
 
 
 ##  Change Log
 
-Empty for now
+- Efforts to lower CPU usage
+  - Shrunken Scan Region size (See Scan Region above)
+  - Removed "start" WatchZone
+  - Removed "isLoading**a**" WatchZone, leaving the main WatchZone as the only feature to scan for

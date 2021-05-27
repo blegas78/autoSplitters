@@ -5,19 +5,15 @@
     <Screen>
       <Name>Game</Name>
       <Geometry>
-        <Width>1920</Width>
-        <Height>1080</Height>
-        <!--
-          How about we make the entire scan region tinier (like 200x100) and place it right in the bottom left corner ?
-        -->
+        <Width>115</Width>
+        <Height>25</Height>
       </Geometry>
       <WatchZones>
-
         <WatchZone>
           <Name>isLoading</Name>
           <Geometry>
-            <X>99</X>
-            <Y>976</Y>
+            <X>0</X>
+            <Y>0</Y>
             <Width>115</Width>
             <Height>25</Height>
           </Geometry>
@@ -33,28 +29,6 @@
             </Watcher>
           </Watches>
         </WatchZone>
-
-        <WatchZone>
-          <Name>isLoadinga</Name>
-          <Geometry>
-            <X>99</X>
-            <Y>976</Y>
-            <Width>115</Width>
-            <Height>25</Height>
-          </Geometry>
-          <Watches>
-            <Watcher>
-              <ErrorMetric>PeakAbsolute</ErrorMetric>
-              <Name>loadinga</Name>
-              <WatchImages>
-                <WatchImage>
-                  <FilePath>imgs\loadinga.png</FilePath>
-                </WatchImage>
-              </WatchImages>
-            </Watcher>
-          </Watches>
-        </WatchZone>
-
       </WatchZones>
     </Screen>
   </Screens>

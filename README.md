@@ -53,25 +53,20 @@ Installation of the VAS should be complete.  You will at a minimum need to resta
 I recommend a reboot post-installation to avoid any headaches.  The first thing that needs to be done is share the video from OBS to LiveSplit.
 
 
-
-## Installation of OBS-VirtualCam (post OBS v26 - using the plugin)
+#### Installation of OBS-VirtualCam (post OBS v26 - using the plugin)
 > If you have any version of OBS newer than 26.0.0, you don't need this plugin - it's built right into OBS. 
 
 This assumes that you already have some flavor of OBS installed.  If not, please visit the [OBS release page](https://github.com/obsproject/obs-studio/releases).  Should also work with Streamlabs-OBS, but I have not personally tried it.
 
 1. Ensure OBS is closed.
-2. Download [OBS-VirtualCam2.0.4-Installer.exe
-](https://github.com/CatxFish/obs-virtual-cam/releases/download/2.0.4/OBS-VirtualCam2.0.4-Installer.exe)
+2. Download [OBS-VirtualCam2.0.4-Installer.exe](https://github.com/CatxFish/obs-virtual-cam/releases/download/2.0.4/OBS-VirtualCam2.0.4-Installer.exe)
 3. Run the installation.  One of the prompts will ask how many cameras you want.  I selected 4, but really only 1 is needed.
-
-#### VirtualCam setup in OBS
-
-1. Open OBS
-2. Under Scenes->Source, right click on your game capture source, then click on "Filters."
-3. Under "Effects Filters", add a new filter.  It may look like a "+" button near the bottom.  Add a filter called "VirtualCam."
-4. There are some settings here.  I leave "Horizontal Flip" and "Keep Aspect Ratio" NOT checked.  I also set "Buffered Frames" to 1.
-5. Most importantly in these settings, remember the name of "Target Camera."   For me, it is "OBS-Camera."
-6. Click on the "Start" button.
+4. Open OBS
+5. Under Scenes->Source, right click on your game capture source, then click on "Filters."
+6. Under "Effects Filters", add a new filter.  It may look like a "+" button near the bottom.  Add a filter called "VirtualCam."
+7. There are some settings here.  I leave "Horizontal Flip" and "Keep Aspect Ratio" NOT checked.  I also set "Buffered Frames" to 1.
+8. Most importantly in these settings, remember the name of "Target Camera."   For me, it is "OBS-Camera."
+9. Click on the "Start" button.
 
 Your game feed should now be fed to a virtual webcam with the name designated under "Target Camera."
 
@@ -90,10 +85,25 @@ Your game feed should now be fed to a virtual webcam with the name designated un
 5. Click on "Layout Settings".  Navigate to the tab titled "Video Auto Splitter."
 6. Under "Settings" ensure that "Capture Device" represents what is set in OBS-VirtualCam's "Target Camera".  For me, it is "OBS-Camera."
 7. Still in "Settings", set the "Game Profile" to the appropriate ".vas" file (hzd.vas or tlou2.vas).
-8. Click on the "Scan Region" tab and ensure that X=0, Y=0, Width=1920, and Height=1080.  If your game is running, with OBS and VirtualCam running, you should see a live preview of your game with funny colors in this tab.
+8. Click on the "Scan Region" tab.
+
+ - For **HZD** autosplitter ensure that
+   - X is set to 99
+   - Y is set to 976
+   - Width is set to 115
+   - Height is set to 25
+ - For **TLOU** autosplitter ensure that
+   - X is set to 0
+   - Y is set to 0
+   - Width is set to 1920
+   - Height is set to 1080
+
+If your game is running, with OBS and VirtualCam running, you should see a live preview of your game with funny colors in this tab.
+
+
 9. Click on OK, then OK again.
-10. At this stage your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.  Right-click on LiveSplit again, then select Compare Against->Game Time.
-11. Save your layout
+10.  At this stage your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.  Right-click on LiveSplit again, then select Compare Against->Game Time.
+11.  Save your layout
 
 
 
@@ -139,7 +149,7 @@ I will build this section more and more as people run into issues with setup.  P
 
 - Solution: There's no real fix for this (yet) other than restarting LiveSplit or reloading your layout until it shows up.
 
-> Problem noticed by ScrambledEggsChef and JustSaft
+> Problem brought up by ScrambledEggsChef and JustSaft
 
 
 
