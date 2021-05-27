@@ -5,22 +5,23 @@ Video with information and installation: [https://www.youtube.com/watch?v=lmLSUK
 I am active in the Horizon Zero Dawn and The Last Of Us (1/2) communities.  These efforts are intended to aid the communities to make live speedrunning times more comparable and therefore, hopefully,  more enjoyable.  If the tools are effective enough, this will eliminate the need to manually calculate your In-Game Time (IGT) through use of a video editor, which can be a laborious task for both runners and leaderboard moderators.
 
 
+
 ##  Does it work?
 
 These seem to work VERY well on my end, however different setups may cause different issues.  Also there could be some scenerios in which they break.  Please see information in either game to learn more about known issues, if any exist.
 
 
-Please also see the Change Log in each laod remover description regarding the reason for updates to .vas files.
+Please also see the Change Log in each load remover description regarding the reason for updates to .vas files.
 
 
 
 ## Requirements
 
-Both the HZD and TLOU2 efforts are intended to be used for LiveSplit using the [Video Auto Splitter (VAS)](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit) tool.  Instructions for installation are already provided by the VAS github, but I will cover installation as well.
+Both the HZD and TLOU2 efforts are intended to be used with LiveSplit using the [Video Auto Splitter (VAS)](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit) component.  Instructions for installation are already provided by the VAS github, but I will cover installation as well.
 
-The VAS is only one necessary component.  You also need to get a video source from your game into the VAS component.  I use OBS with a component called [OBS-VirtualCam](https://github.com/CatxFish/obs-virtual-cam).  Again, instructions for installalation are provided there but they will be covered here as well.
+The VAS is only one necessary component. You also need to get a video source from your game into the VAS component. Since OBS version 26 the previosly required [OBS-VirtualCam](https://github.com/CatxFish/obs-virtual-cam) plugin is included as a feature in OBS (However, if you have a portable OBS version, the option to start the virtual cam won't show up).
 
-There may be issues in installation for different versions of software, but don't be afraid to try versions different form my own.  This is the list of versions that I use for development and testing:
+There may be issues in installation for different versions of software, but don't be afraid to try versions different from my own.  This is the list of versions that I use for development and testing:
 
  - [Livesplit 1.8.10](https://github.com/LiveSplit/LiveSplit/releases)
  - [Video Auto Splitter 0.5.2.3](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases)
@@ -31,7 +32,7 @@ I have reports from some users that have had success using PS4 share instead of 
 
 I have also heard reports that versions newer than the above list also work.  Thank you Aquila_Ezio!
 
-Kevin700p has had trouble streaming and using the load remover at the same time.  Turns out his phone was plugged into his stream computer (a laptop) and unplugging the phone lets him do both at once.
+
 
 ## Installation of the LiveSplit VAS component
 
@@ -45,7 +46,17 @@ This assumes that you already have LiveSplit installed.  If not, please visit th
 
 Installation of the VAS should be complete.  You will at a minimum need to restart LiveSplit.
 
-## Installation of OBS-VirtualCam
+
+
+## Setup
+
+I recommend a reboot post-installation to avoid any headaches.  The first thing that needs to be done is share the video from OBS to LiveSplit.
+
+
+
+## Installation of OBS-VirtualCam (post OBS v26 - using the plugin)
+> If you have any version of OBS newer than 26.0.0, you don't need this plugin - it's built right into OBS. 
+
 This assumes that you already have some flavor of OBS installed.  If not, please visit the [OBS release page](https://github.com/obsproject/obs-studio/releases).  Should also work with Streamlabs-OBS, but I have not personally tried it.
 
 1. Ensure OBS is closed.
@@ -53,12 +64,7 @@ This assumes that you already have some flavor of OBS installed.  If not, please
 ](https://github.com/CatxFish/obs-virtual-cam/releases/download/2.0.4/OBS-VirtualCam2.0.4-Installer.exe)
 3. Run the installation.  One of the prompts will ask how many cameras you want.  I selected 4, but really only 1 is needed.
 
-## Setup
-
-I recommend a reboot post-installation to avoid any headaches.  The first thing that needs to be done is share the video from OBS to LiveSplit.
-
-
-#### VirtualCam in OBS setup
+#### VirtualCam setup in OBS
 
 1. Open OBS
 2. Under Scenes->Source, right click on your game capture source, then click on "Filters."
@@ -72,6 +78,8 @@ Your game feed should now be fed to a virtual webcam with the name designated un
 > IMPORTANT: Every time that you close/open OBS, you will need to navigate to the VirtualCam filter and click that "Start" button.  It will NOT auto-start each time OBS is restarted.
 
 > Tip: If you are unsure that this is working, you can test using any program that makes use of a webcam to check video.  For example: I use Discord and check video settings for video chat preview, and select the "OBS-Camera" to see if the game feed is coming through.
+
+
 
 #### Video Auto Splitter
 
@@ -87,14 +95,19 @@ Your game feed should now be fed to a virtual webcam with the name designated un
 10. At this stage your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.  Right-click on LiveSplit again, then select Compare Against->Game Time.
 11. Save your layout
 
-#### PS4 Settings
 
-These load removers are based on reading the HUD in particular places.  The PS4 has the ability to change how the HUD is rendered based on system settings.  In order to ensure that the HUD is in the correct spot, you will need to set the HUD to the largest setting.
+
+#### PS4/PS5 Settings
+
+> These instructions should also apply to the PS5, but they might have a different name.
+
+These load removers are based on reading the HUD in particular places.  The PS has the ability to change how the HUD is rendered based on system settings.  In order to ensure that the HUD is in the correct spot, you will need to set the HUD to the largest setting.
 
 1. In the PS4's home screen, navigate to "Settings."
 2. Go to "Sound and Screen."
 3. Select "Display Area Settings."
 4. Enlarge the setting to the maximum setting, until "Enlarge" becomes greyed.
+
 
 
 ## Testing
@@ -104,15 +117,29 @@ With all of the above up and running and showing IGT,  try to start the timer th
 
 
 
+## Problems
+
+Kevin700P has had trouble streaming and using the load remover at the same time.  Turns out his phone was plugged into his stream computer (a laptop) and unplugging the phone lets him do both at once.
+
+
+
 ## Troubleshooting
 
 I will build this section more and more as people run into issues with setup.  Please contact me if you have issues with setup, installation, or if you have inconsistencies in load times.
 
-- Problem: Load pauses worked, but in the middle of the run they stop pausing or unpausing.
+#### Problem: Load pauses worked, but in the middle of the run they stop pausing or unpausing.
 - Solution: In LiveSplit restart the load remover by: Right-Click - Open Layout - select your layout
 
-- Problem:  I regularly get crashes in the middle of runs.
+#### Problem: I regularly get crashes in the middle of runs.
 - Solution: Your CPU may be overloaded.  Try reducing your CPU load by closing unnecessary programs.  I have had to eliminate Streamlabs Emote Walls since that regularly consumes 20% CPU on my end.  I have also heard success regarding stopping local recordings (this sucks but all hardware is different).
+- Solution 2: This may also be caused by a specific combination of software (VAS, LiveSplit, OBS). Try a different versions.
+
+#### Problem: Scan Region tab in the VAS's settings doesn't show a preview
+> This assumes you already have OBS running and outputting an image through via the virtual cam
+
+- Solution: There's no real fix for this (yet) other than restarting LiveSplit or reloading your layout until it shows up.
+
+> Problem noticed by ScrambledEggsChef and JustSaft
 
 
 
@@ -147,6 +174,8 @@ Right-click your game video capture device, then select "Properties"
  - Resolution: 1920x1080
  - Color Space: Default
  - Color Range: Partial
+
+
 
 ## Contributors
 
