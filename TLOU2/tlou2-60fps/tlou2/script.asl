@@ -146,7 +146,7 @@ update
 
 
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
-	if(vars.restartFalling || vars.skipFalling) {	// Only do this for RE/RC, not Skip cutscenes
+	if(vars.restartFalling) {	// Only do this for RE/RC, not Skip cutscenes
 		//vars.ticksForTimeCorrection += 990;	// we add a full second but need to make sure to offset time adjustments
 		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 1, 0) );
 
@@ -157,6 +157,20 @@ update
 			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
 			vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 		//}
+	}
+
+	if(vars.skipFalling) {
+		var millisecondsToAdd = 0;
+		// if (vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds < 500) {
+		// 	millisecondsToAdd = -vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
+		// } else {
+			millisecondsToAdd = 1000-vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
+		// }
+		if(millisecondsToAdd < 1000) {
+			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
+			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
+		}
+		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 	}
 
 	// Method 1 for ND IGT time correction: Frame counting -- FAILS
@@ -206,8 +220,8 @@ update
 		vars.ticksForTimeCorrection += 960;
 		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
 		// 29.97fps:
-		//vars.ticksForTimeCorrection += 990;
-		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
+		// vars.ticksForTimeCorrection += 990;
+		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
 	}
 	// At start of IGT, reset the comparison for time correction:
 	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 400) {
