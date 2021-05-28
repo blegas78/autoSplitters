@@ -68,6 +68,8 @@ update
 	vars.skipPrior =	features["SkipCinematic"].old > 15.0;
 	vars.restartPrior =	features["Restart"].old > 15.0;
 
+	vars.backShown =	features["BackButton"].current > 15.0;
+
 	// This if is purely to aid in CPU usage optimization though the effects are probably negligible 
 	if ( vars.backPrior || vars.waitingForBlackEnd || vars.waitingMothsStart || vars.moths ) {
 		// vars.blackness corresponds to a value where the lower the value, the more black the measured areas
@@ -116,7 +118,7 @@ update
 	// This logic uses the concept of falling/rising edges to get the exact trigger when a skip cutscen was selected
 	if(!vars.skipFalling && vars.skipWasPrimed) {
 		if ((	vars.backPrior &&
-				features["BackButton"].current <= 15.0
+				!vars.backShown
 			) && (
 				vars.isBlack
 			)) {
@@ -126,13 +128,13 @@ update
 		vars.skipFalling = false;
 	}
 	// We only get ready to apply the above logic when the back button is shown and "SkipCinematic" is present
-	vars.skipWasPrimed =	features["BackButton"].current > 15.0 && features["SkipCinematic"].current > 15.0;
+	vars.skipWasPrimed = vars.backShown && (features["SkipCinematic"].current > 15.0);
 
 
 	// Similar to the logic above, but for detecting the instant RE/RC was selected
 	if(!vars.restartFalling && vars.restartWasPrimed) {
 		if ((	vars.backPrior &&
-				features["BackButton"].current <= 15.0
+				!vars.backShown
 			) && (
 				vars.isBlack
 			)) {
@@ -142,7 +144,7 @@ update
 		vars.restartFalling = false;
 	}
 	// We only get ready to apply the above logic when the back button is shown and "Restart" is present
-	vars.restartWasPrimed =	features["BackButton"].current > 15.0 && features["Restart"].current > 15.0;
+	vars.restartWasPrimed =	vars.backShown && (features["Restart"].current > 15.0);
 
 
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
@@ -170,6 +172,25 @@ update
 			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
 			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
 		}
+		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
+	}
+
+	// Hysteresis on the "NEXT" in death loading due to fade-in: 
+	// TODO: This appears to not work anymore, maybe due to a patch and changed HUD?
+	if( !vars.deathLoad && features["DeathNext"].current > 15.0 ) {
+		vars.deathLoad = true;
+		vars.deathRising = true;
+	} else {
+		vars.deathRising = false;
+	}
+	if( vars.deathLoad && features["DeathNext"].current < 5.0) {
+		vars.deathLoad = false;
+	}
+
+	// If a rising edge is detected on a death, subtract off the ~3-5 seconds it took to appear
+	if ( vars.deathRising ) {
+		var millisecondsToAdd = -4500 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
 		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 	}
 
@@ -228,26 +249,26 @@ update
 	 	vars.ticksForTimeCorrection = 500; // we will start right in the middle at 0.5 seconds toi adjust time
 	}
 
+	// If the back button is shown, then we can restart all state variables:
 
-	// Hysteresis on the "NEXT" in death loading due to fade-in: 
-	// TODO: This appears to not work anymore, maybe due to a patch and changed HUD?
-	if( !vars.deathLoad && features["DeathNext"].current > 15.0 ) {
-		vars.deathLoad = true;
-		vars.deathRising = true;
-	} else {
+	if (vars.backShown) {
+		//vars.skipFalling = false;
+		//vars.restartFalling = false;
+		//vars.skipWasPrimed = false;
+		//vars.restartWasPrimed = false;
+
+		vars.moths = false;
+		vars.waitingMothsStart = false;
+		vars.waitingMothsEnd = false;
+
+		vars.waitingForBlackEnd = false;
+
+		vars.loadingStarted = false;
+
+		vars.waitingDeathEnd = false;
 		vars.deathRising = false;
-	}
-	if( vars.deathLoad && features["DeathNext"].current < 5.0) {
 		vars.deathLoad = false;
 	}
-
-	// If a rising edge is detected on a death, subtract off the 3.5 seconds it took to appear
-	if ( vars.deathRising ) {
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, -3, -500) );
-	}
-
-
-	vars.backShown = features["BackButton"].current > 15.0;
 }
 
 
