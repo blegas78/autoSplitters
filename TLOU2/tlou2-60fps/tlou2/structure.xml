@@ -14,7 +14,7 @@
             <Name>SkipCinematic</Name>
             <Geometry>
               <X>484</X>
-              <Y>420</Y>
+              <Y>421</Y>
               <Width>66</Width>
               <Height>24</Height>
             </Geometry>
@@ -35,7 +35,7 @@
             <Name>Restart</Name>
             <Geometry>
               <X>484</X>
-              <Y>420</Y>
+              <Y>421</Y>
               <Width>66</Width>
               <Height>24</Height>
             </Geometry>
