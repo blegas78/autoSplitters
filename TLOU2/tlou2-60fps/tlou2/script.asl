@@ -168,10 +168,10 @@ update
 		// } else {
 			millisecondsToAdd = 1000-vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
 		// }
-		if(millisecondsToAdd < 1000) {
+		//if(millisecondsToAdd < 1000) {
 			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
 			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
-		}
+		//}
 		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 	}
 
