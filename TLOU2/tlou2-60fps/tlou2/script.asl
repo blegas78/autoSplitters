@@ -3,15 +3,17 @@ init
 	//ars.frameCounterv = 0;
 	vars.currentlyLoading = false;
 
+	vars.backShown = false;
+	vars.backPrior = false;
+
 	// vars.fps = 0;//0.0;
 	//vars.oldTime = TimeSpan.Zero;
-
-	vars.ticksForTimeCorrection = 0;
 
 	vars.timerModel = new TimerModel { CurrentState = timer };
 
 	//vars.backRising = false;
 	vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;//TimeSpan.Zero;
+	vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 
 	vars.skipFalling = false;
 	vars.restartFalling = false;
@@ -29,7 +31,7 @@ init
 
 	vars.loadingStarted = false;
 
-	vars.backShown = false;
+	
 
 	vars.waitingDeathEnd = false;
 	vars.deathRising = false;
@@ -67,28 +69,30 @@ reset
 
 update
 {
-	vars.backPrior =	features["BackButton"].old > 15.0;
-	vars.skipPrior =	features["SkipCinematic"].old > 15.0;
-	vars.restartPrior =	features["Restart"].old > 15.0;
+	// vars.backPrior =	features["BackButton"].old > 15.0;
+	// vars.skipPrior =	features["SkipCinematic"].old > 15.0;
+	// vars.restartPrior =	features["Restart"].old > 15.0;
 
 	// This logic ensures that the user actually pressed the back button to 
 	// avoid faults due to HUD incorrectly appearing
-	if(	(features["BackButton"].current > 15.0) && 
-		(features["BackButton"].old <= 15.0) ) {
-		//vars.backRising = true;
-		vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;
-	} //else {
-	//	vars.backRising = false;
-	//}
-	if (features["BackButton"].current > 15.0) {
+	if(	features["BackButton"].current > 15.0 ) {
+		if ( vars.backShown == false ) {
+			//vars.backRising = true;
+			vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;
+		} //else {
+		//	vars.backRising = false;
+		//}
+		
 		if (features["PauseCinematic"].current > 7 ||
 			features["PauseEncounter"].current > 7 ||
 			features["PauseCheckpoint"].current > 7 ) {
 			if (vars.backShown == false) {
 				vars.timerModel.CurrentState.SetGameTime(vars.backSavedTime);
+				vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 			}
 			vars.backShown = true;
 		}
+		
 	} else {
 		vars.backShown = false;
 	}
@@ -140,14 +144,8 @@ update
 	//			);
 
 	// This logic uses the concept of falling/rising edges to get the exact trigger when a skip cutscen was selected
-	if(!vars.skipFalling && vars.skipWasPrimed) {
-		if ((	vars.backPrior &&
-				!vars.backShown
-			) && (
-				vars.isBlack
-			)) {
-				vars.skipFalling = true;
-			}
+	if( vars.skipWasPrimed && !vars.backShown) {
+		vars.skipFalling = true;
 	} else {
 		vars.skipFalling = false;
 	}
@@ -156,14 +154,8 @@ update
 
 
 	// Similar to the logic above, but for detecting the instant RE/RC was selected
-	if(!vars.restartFalling && vars.restartWasPrimed) {
-		if ((	vars.backPrior &&
-				!vars.backShown
-			) && (
-				vars.isBlack
-			)) {
-				vars.restartFalling = true;
-			}
+	if( vars.restartWasPrimed && !vars.backShown) {
+		vars.skipFalling = true;
 	} else {
 		vars.restartFalling = false;
 	}
@@ -293,11 +285,11 @@ update
 		vars.deathRising = false;
 		vars.deathLoad = false;
 	}
-}
+
+	vars.backPrior = vars.backShown;
 
 
-isLoading
-{
+
 	// For player-invoked skip cutscene or RE/RC
 	// When the skip occurs, we enter a state of waiting for moths OR waiting for the screen to become obviously non-black
 	if( vars.skipFalling || vars.restartFalling ) {
@@ -319,7 +311,7 @@ isLoading
 		} else {
 			// Checks conditions to see if the moith screen is gone
 			// First we know that moths are gone if the blackness test fails and definitelyNotMoths is true
-			// ^ however, if we detect a laoding  circle then definitelyNotMoths is invalid and we had bad moth RNG. laoding circle FTW
+			// ^ however, if we detect a loading  circle then definitelyNotMoths is invalid and we had bad moth RNG. loading circle FTW
 			// Also we know that moths don't exist if the upper image gradient doesn't exist
 			// Tuning this logic and associated values is best done with Ellie at the very final guitar since
 			// 1) the graident check will pass - a false positive
@@ -374,6 +366,16 @@ isLoading
 	}
 	
 	// A load is defined wither by conditions of the above state machines or hard set when ina pause menu or laoding screen
-	vars.currentlyLoading = vars.loadingStarted || vars.backShown || vars.deathLoad;
+	if(vars.loadingStarted || vars.backShown || vars.deathLoad) {
+		vars.currentlyLoading = true;
+	} else {
+		vars.currentlyLoading = false;
+	}
+
+	return true;
+}
+
+isLoading
+{
 	return	vars.currentlyLoading;
 }
