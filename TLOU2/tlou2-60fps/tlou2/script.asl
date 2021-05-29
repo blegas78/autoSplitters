@@ -1,87 +1,45 @@
-init
+startup
 {
-	//ars.frameCounterv = 0;
 	vars.currentlyLoading = false;
 
+	vars.definitelyNotMoths = false;
 	vars.backShown = false;
 	vars.backPrior = false;
 
-	// vars.fps = 0;//0.0;
-	//vars.oldTime = TimeSpan.Zero;
+	vars.skipFalling = false;
+	vars.restartFalling = false;
+	vars.skipWasPrimed = false;
+	vars.restartWasPrimed = false;
+
+	vars.moths = false;
+	vars.waitingMothsStart = false;
+	vars.waitingMothsEnd = false;
+
+	vars.blackness = 0.0;
+	vars.isBlack = false;
+	
+	vars.waitingForBlackEnd = false;
+
+	vars.loadingStarted = false;
+
+	vars.waitingDeathEnd = false;
+	vars.deathRising = false;
+	vars.deathLoad= false;
 
 	vars.timerModel = new TimerModel { CurrentState = timer };
 
-	//vars.backRising = false;
-	vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;//TimeSpan.Zero;
+	vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;
 	vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
-
-	vars.skipFalling = false;
-	vars.restartFalling = false;
-	vars.skipWasPrimed = false;
-	vars.restartWasPrimed = false;
-
-	vars.moths = false;
-	vars.waitingMothsStart = false;
-	vars.waitingMothsEnd = false;
-
-	vars.isBlack = false;
-	vars.definitelyNotMoths = false;
-	vars.blackness = 0.0;
-	vars.waitingForBlackEnd = false;
-
-	vars.loadingStarted = false;
-
-	
-
-	vars.waitingDeathEnd = false;
-	vars.deathRising = false;
-	vars.deathLoad = false;
-}
-
-reset 
-{
-/*
-	vars.currentlyLoading = false;
-	vars.ticksForTimeCorrection = 480000;
-
-	vars.skipFalling = false;
-	vars.restartFalling = false;
-	vars.skipWasPrimed = false;
-	vars.restartWasPrimed = false;
-
-	vars.moths = false;
-	vars.waitingMothsStart = false;
-	vars.waitingMothsEnd = false;
-
-	vars.isBlack = false;
-	vars.definitelyNotMoths = false;
-	vars.blackness = 0.0;
-	vars.waitingForBlackEnd = false;
-
-	vars.loadingStarted = false;
-
-	vars.backShown = false;
-
-	vars.waitingDeathEnd = false;
-	vars.deathRising = false;
-	vars.deathLoad = false; */
 }
 
 update
 {
-	// vars.backPrior =	features["BackButton"].old > 15.0;
-	// vars.skipPrior =	features["SkipCinematic"].old > 15.0;
-	// vars.restartPrior =	features["Restart"].old > 15.0;
-
 	// This logic ensures that the user actually pressed the back button to 
 	// avoid faults due to HUD incorrectly appearing
 	if(	features["BackButton"].current > 15.0 ) {
 		if ( vars.backShown == false ) {
-			//vars.backRising = true;
 			vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;
-		} //else {
-		//	vars.backRising = false;
-		//}
+		}
 		
 		if (features["PauseCinematic"].current > 7 ||
 			features["PauseEncounter"].current > 7 ||
@@ -97,23 +55,21 @@ update
 		vars.backShown = false;
 	}
 	
-
-	// This if is purely to aid in CPU usage optimization though the effects are probably negligible 
+// This if is purely to aid in CPU usage optimization though the effects are probably negligible 
 	if ( vars.backPrior || vars.waitingForBlackEnd || vars.waitingMothsStart || vars.moths ) {
 		// vars.blackness corresponds to a value where the lower the value, the more black the measured areas
 		// This is done using the sum of the squared errors
 		// The value of 94.1176 was found empirically using LiveSplit.
 		// Unsure why features[...].current will go either both up or down when non-black, but this seems to work
-
 		var black1 = features["black1"].current;
 		var black2 = features["black2"].current;
 		var black3 = features["black3"].current;
 		var black4 = features["black4"].current;
 
-		vars.blackness = Math.Pow(black1 - 94.1176, 2.0) + 
-				 Math.Pow(black2 - 94.1176, 2.0) + 
-				 Math.Pow(black3 - 94.1176, 2.0) + 
-				 Math.Pow(black4 - 94.1176, 2.0);
+		vars.blackness =	Math.Pow(black1 - 94.1176, 2.0) + 
+							Math.Pow(black2 - 94.1176, 2.0) + 
+							Math.Pow(black3 - 94.1176, 2.0) + 
+							Math.Pow(black4 - 94.1176, 2.0);
 	
 		// Designates when the screen is absolutely black:
 		vars.isBlack  = vars.blackness <= 1.0;
@@ -131,68 +87,30 @@ update
 									// Per the above, change to 1750.  Also moved black4 left 160 pixels left, further from moths.
 									// Similarly, also moved black1 a bit left and down
 		vars.definitelyNotMoths =  mothBlackness > 1750.0;
-
 	}
-
-	
-
-	//vars.skipFalling =	(
-	//				vars.backPrior &&
-	//				features["BackButton"].current <= 15.0
-	//			) && (
-	//				vars.isBlack
-	//			);
 
 	// This logic uses the concept of falling/rising edges to get the exact trigger when a skip cutscen was selected
-	if( vars.skipWasPrimed && !vars.backShown) {
-		vars.skipFalling = true;
-	} else {
-		vars.skipFalling = false;
-	}
-	// We only get ready to apply the above logic when the back button is shown and "SkipCinematic" is present
+	vars.skipFalling = vars.skipWasPrimed && !vars.backShown;
 	vars.skipWasPrimed = vars.backShown && (features["SkipCinematic"].current > 15.0);
 
-
 	// Similar to the logic above, but for detecting the instant RE/RC was selected
-	if( vars.restartWasPrimed && !vars.backShown) {
-		vars.skipFalling = true;
-	} else {
-		vars.restartFalling = false;
-	}
-	// We only get ready to apply the above logic when the back button is shown and "Restart" is present
+	vars.restartFalling = vars.restartWasPrimed && !vars.backShown;
 	vars.restartWasPrimed =	vars.backShown && (features["Restart"].current > 15.0);
 
-
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
-	if(vars.restartFalling) {	// Only do this for RE/RC, not Skip cutscenes
-		//vars.ticksForTimeCorrection += 990;	// we add a full second but need to make sure to offset time adjustments
-		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 1, 0) );
-
-		// This performs an effective ceil() on seconds:
+	if(vars.restartFalling) {
 		var millisecondsToAdd = 1500 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
-		//if(millisecondsToAdd < 1000) {
-			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
-			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
-			vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
-		//}
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
+		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 	}
 
 	if(vars.skipFalling) {
-		var millisecondsToAdd = 0;
-		// if (vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds < 500) {
-		// 	millisecondsToAdd = -vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
-		// } else {
-			millisecondsToAdd = 1000-vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
-		// }
-		//if(millisecondsToAdd < 1000) {
-			// vars.ticksForTimeCorrection += millisecondsToAdd-9;
-			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
-		//}
+		var millisecondsToAdd = 1000-vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
 		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 	}
 
 	// Hysteresis on the "NEXT" in death loading due to fade-in: 
-	// TODO: This appears to not work anymore, maybe due to a patch and changed HUD?
 	if( !vars.deathLoad && features["DeathNext"].current > 15.0 ) {
 		vars.deathLoad = true;
 		vars.deathRising = true;
@@ -260,18 +178,14 @@ update
 		vars.ticksForTimeCorrection += 990;
 		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
 	}
+	
 	// At start of IGT, reset the comparison for time correction:
 	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 400) {
-	 	vars.ticksForTimeCorrection = 500; // we will start right in the middle at 0.5 seconds toi adjust time
+	 	vars.ticksForTimeCorrection = 500;
 	}
 
 	// If the back button is shown, then we can restart all state variables:
-
 	if (vars.backShown) {
-		//vars.skipFalling = false;
-		//vars.restartFalling = false;
-		//vars.skipWasPrimed = false;
-		//vars.restartWasPrimed = false;
 
 		vars.moths = false;
 		vars.waitingMothsStart = false;
@@ -288,12 +202,10 @@ update
 
 	vars.backPrior = vars.backShown;
 
-
-
 	// For player-invoked skip cutscene or RE/RC
 	// When the skip occurs, we enter a state of waiting for moths OR waiting for the screen to become obviously non-black
 	if( vars.skipFalling || vars.restartFalling ) {
-		vars.loadingStarted = true;	// No matter what we know that we are in a loading screen
+		vars.loadingStarted = true; // No matter what we know that we are in a loading screen
 		vars.waitingMothsStart = true;
 		
 		vars.waitingForBlackEnd = false;
@@ -335,7 +247,7 @@ update
 		vars.waitingForBlackEnd = true;
 	}
 
-	// For death screen:
+	// For death screen
 	if ( vars.deathRising ) {
 		vars.loadingStarted = true;
 		
@@ -348,12 +260,11 @@ update
 		vars.isBlack = true; // HACK: doing this since the below will think loading is done, not black.
 	}
 
-
 	// Conditions for the end of a loading screen:
 	// We must have always priorly entered a known loading screen condition+ and either:
 	// 1) the black screen ended when we were waiting for it
 	// 2) we were waiting for moths but the screen is no longer showign definitive black
-	if (	vars.loadingStarted && (
+	if ( vars.loadingStarted && (
 		( vars.waitingForBlackEnd && !vars.isBlack ) ||
 		( vars.waitingMothsStart && !vars.isBlack  ) )) {
 		vars.loadingStarted = false;
@@ -365,14 +276,7 @@ update
 		vars.waitingDeathEnd = false;
 	}
 	
-	// A load is defined wither by conditions of the above state machines or hard set when ina pause menu or laoding screen
-	if(vars.loadingStarted || vars.backShown || vars.deathLoad) {
-		vars.currentlyLoading = true;
-	} else {
-		vars.currentlyLoading = false;
-	}
-
-	return true;
+	vars.currentlyLoading = vars.loadingStarted || vars.backShown || vars.deathLoad;
 }
 
 isLoading
