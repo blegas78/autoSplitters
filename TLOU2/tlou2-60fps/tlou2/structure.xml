@@ -31,6 +31,69 @@
             </Watches>
         </WatchZone>
 
+          <WatchZone>
+            <Name>PauseCinematic</Name>
+            <Geometry>
+              <X>115</X>
+              <Y>788</Y>
+              <Width>66</Width>
+              <Height>23</Height>
+            </Geometry>
+            <Watches>
+              <Watcher>
+                <Name>Skip</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+                <WatchImages>
+                  <WatchImage>
+                    <FilePath>imgs\SkipPause.png</FilePath>
+                  </WatchImage>
+                </WatchImages>
+              </Watcher>
+            </Watches>
+        </WatchZone>
+
+	<WatchZone>
+            <Name>PauseEncounter</Name>
+            <Geometry>
+              <X>115</X>
+              <Y>787</Y>
+              <Width>66</Width>
+              <Height>23</Height>
+            </Geometry>
+            <Watches>
+              <Watcher>
+                <Name>Skip</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+                <WatchImages>
+                  <WatchImage>
+                    <FilePath>imgs\SkipPause.png</FilePath>
+                  </WatchImage>
+                </WatchImages>
+              </Watcher>
+            </Watches>
+        </WatchZone>
+
+	<WatchZone>
+            <Name>PauseCheckpoint</Name>
+            <Geometry>
+              <X>115</X>
+              <Y>756</Y>
+              <Width>66</Width>
+              <Height>23</Height>
+            </Geometry>
+            <Watches>
+              <Watcher>
+                <Name>Skip</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+                <WatchImages>
+                  <WatchImage>
+                    <FilePath>imgs\SkipPause.png</FilePath>
+                  </WatchImage>
+                </WatchImages>
+              </Watcher>
+            </Watches>
+        </WatchZone>
+
 	<WatchZone>
             <Name>Restart</Name>
             <Geometry>

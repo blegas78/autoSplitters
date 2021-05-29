@@ -10,6 +10,9 @@ init
 
 	vars.timerModel = new TimerModel { CurrentState = timer };
 
+	//vars.backRising = false;
+	vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;//TimeSpan.Zero;
+
 	vars.skipFalling = false;
 	vars.restartFalling = false;
 	vars.skipWasPrimed = false;
@@ -68,7 +71,28 @@ update
 	vars.skipPrior =	features["SkipCinematic"].old > 15.0;
 	vars.restartPrior =	features["Restart"].old > 15.0;
 
-	vars.backShown =	features["BackButton"].current > 15.0;
+	// This logic ensures that the user actually pressed the back button to 
+	// avoid faults due to HUD incorrectly appearing
+	if(	(features["BackButton"].current > 15.0) && 
+		(features["BackButton"].old <= 15.0) ) {
+		//vars.backRising = true;
+		vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;
+	} //else {
+	//	vars.backRising = false;
+	//}
+	if (features["BackButton"].current > 15.0) {
+		if (features["PauseCinematic"].current > 7 ||
+			features["PauseEncounter"].current > 7 ||
+			features["PauseCheckpoint"].current > 7 ) {
+			if (vars.backShown == false) {
+				vars.timerModel.CurrentState.SetGameTime(vars.backSavedTime);
+			}
+			vars.backShown = true;
+		}
+	} else {
+		vars.backShown = false;
+	}
+	
 
 	// This if is purely to aid in CPU usage optimization though the effects are probably negligible 
 	if ( vars.backPrior || vars.waitingForBlackEnd || vars.waitingMothsStart || vars.moths ) {
@@ -238,11 +262,11 @@ update
 	// Note on imprecision: rounding the milliseconds from 11.001001 to 11 results in an error of 1.82 seconds over 5 hours
 	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
 		// 60-fps:
-		vars.ticksForTimeCorrection += 960;
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
+		// vars.ticksForTimeCorrection += 960;
+		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
 		// 29.97fps:
-		// vars.ticksForTimeCorrection += 990;
-		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
+		vars.ticksForTimeCorrection += 990;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
 	}
 	// At start of IGT, reset the comparison for time correction:
 	if(vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds < 400) {

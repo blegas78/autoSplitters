@@ -80,6 +80,31 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
+            "name": "Pause Menu Encounter",
+            "prev_ver": 436273153,
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/autosplitters/TLOU2/testing/images/pauseEncounter.png"
+            },
+            "sync": 0,
+            "versioned_id": "image_source",
+            "volume": 1.0
+        },
+        {
+            "balance": 0.5,
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
             "name": "Death Tutorial",
             "prev_ver": 436273153,
             "private_settings": {},
@@ -170,6 +195,7 @@
                 "libobs.hide_scene_item.Moth Test 1": [],
                 "libobs.hide_scene_item.Pause Menu Checkpoint": [],
                 "libobs.hide_scene_item.Pause Menu Cinematic": [],
+                "libobs.hide_scene_item.Pause Menu Encounter": [],
                 "libobs.hide_scene_item.Restart Checkpoint No": [],
                 "libobs.hide_scene_item.Restart Checkpoint Yes": [],
                 "libobs.hide_scene_item.Skip Cinamtic Yes": [],
@@ -187,6 +213,7 @@
                 "libobs.show_scene_item.Moth Test 1": [],
                 "libobs.show_scene_item.Pause Menu Checkpoint": [],
                 "libobs.show_scene_item.Pause Menu Cinematic": [],
+                "libobs.show_scene_item.Pause Menu Encounter": [],
                 "libobs.show_scene_item.Restart Checkpoint No": [],
                 "libobs.show_scene_item.Restart Checkpoint Yes": [],
                 "libobs.show_scene_item.Skip Cinamtic Yes": [],
@@ -210,7 +237,7 @@
             "push-to-talk-delay": 0,
             "settings": {
                 "custom_size": false,
-                "id_counter": 18,
+                "id_counter": 19,
                 "items": [
                     {
                         "align": 5,
@@ -326,7 +353,7 @@
                             "y": 0.5
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -573,6 +600,35 @@
                         "crop_right": 0,
                         "crop_top": 0,
                         "group_item_backup": false,
+                        "id": 19,
+                        "locked": false,
+                        "name": "Pause Menu Encounter",
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.75,
+                            "y": 0.75
+                        },
+                        "scale_filter": "disable",
+                        "visible": false
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "group_item_backup": false,
                         "id": 7,
                         "locked": false,
                         "name": "Pause Menu Checkpoint",
@@ -583,8 +639,8 @@
                         "private_settings": {},
                         "rot": 0.0,
                         "scale": {
-                            "x": 0.75,
-                            "y": 0.75
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "scale_filter": "disable",
                         "visible": false
@@ -645,7 +701,7 @@
                             "y": 1.2000000476837158
                         },
                         "scale_filter": "disable",
-                        "visible": false
+                        "visible": true
                     },
                     {
                         "align": 5,
