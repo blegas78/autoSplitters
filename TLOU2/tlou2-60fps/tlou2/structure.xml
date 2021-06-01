@@ -352,6 +352,28 @@
             </Watches>
         </WatchZone>
 
+        <WatchZone>
+          <Name>black5</Name>
+          <Geometry>
+            <X>1840</X>
+            <Y>0</Y>
+            <Width>80</Width>
+            <Height>40</Height>
+          </Geometry>
+          <Watches>
+            <Watcher>
+              <Name>loading</Name>
+            <ErrorMetric>PeakAbsolute</ErrorMetric>
+              <Equalize>false</Equalize>
+              <WatchImages>
+                <WatchImage>
+                  <FilePath>imgs\black.png</FilePath>
+                </WatchImage>
+              </WatchImages>
+            </Watcher>
+          </Watches>
+        </WatchZone>
+
 
         
       </WatchZones>

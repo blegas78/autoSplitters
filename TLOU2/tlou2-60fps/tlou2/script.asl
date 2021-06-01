@@ -1,8 +1,8 @@
 startup
 {
-	vars.currentlyLoading = false;
+	
 
-	vars.definitelyNotMoths = false;
+	
 	vars.backShown = false;
 	vars.backPrimed = false;
 	vars.backPrior = false;
@@ -18,11 +18,13 @@ startup
 	vars.mothsWereShown = false;
 
 	vars.blackness = 0.0;
+	vars.definitelyNotMoths = false;
 	vars.isBlack = false;
 	
 	vars.waitingForBlackEnd = false;
 
 	vars.loadingStarted = false;
+	vars.currentlyLoading = false;
 
 	vars.waitingDeathEnd = false;
 	vars.deathRising = false;
@@ -97,23 +99,29 @@ update
 
 	// This logic uses the concept of falling/rising edges to get the exact trigger when a skip cutscen was selected
 	vars.skipFalling = vars.skipWasPrimed && !vars.backShown;
-	vars.skipWasPrimed = (features["SkipCinematic"].current > 15.0) && vars.backShown;
+	var skipCinematicShown = features["SkipCinematic"].current > 15.0;
+	vars.skipWasPrimed = skipCinematicShown && vars.backShown;
 
 	// Similar to the logic above, but for detecting the instant RE/RC was selected
 	vars.restartFalling = vars.restartWasPrimed && !vars.backShown;
-	vars.restartWasPrimed =	(features["Restart"].current > 15.0) && vars.backShown;
+	var restartShown = features["Restart"].current > 15.0;
+	vars.restartWasPrimed =	restartShown && vars.backShown;
 
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
 	if(vars.restartFalling) {
-		var millisecondsToAdd = 1500 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
+		var millisecondsToAdd = 1000 - vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
 		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
 		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 	}
 
 	if(vars.skipFalling) {
 		var millisecondsToAdd = 1000-vars.timerModel.CurrentState.CurrentTime.GameTime.Milliseconds;
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
-		vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
+		if (millisecondsToAdd == 1000) {
+			millisecondsToAdd = 0;
+		}
+		//millisecondsToAdd += 160; // = 10 frames * 16 -- for 30fps this would be 33*5 = 165
+		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, millisecondsToAdd) );
+		//vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
 	}
 
 	// Hysteresis on the "NEXT" in death loading due to fade-in: 
@@ -217,7 +225,8 @@ update
 		vars.waitingForBlackEnd = false;
 		vars.waitingMothsEnd = false;
 		vars.mothsWereShown = false;
-		
+		vars.moths = false;
+
 		vars.isBlack = true; // HACK: doing this since the below will think loading is done, not black.
 		
 	}
@@ -237,7 +246,9 @@ update
 			// 1) the graident check will pass - a false positive
 			// 2) the blackness probe points in the lower left of the screen are similarly dark, also causing false positives
 			// AFAIK this is the only troublesome spot in the game.
-			if( (vars.definitelyNotMoths && !(features["LoadingCircle"].current > 25.0)) || !(features["mothGradient"].current > 15.0) ) {
+			if( (vars.definitelyNotMoths && !(features["LoadingCircle"].current > 25.0)) || 
+				// !(features["mothGradient"].current > 15.0)  ||
+				(vars.waitingMothsEnd && (Math.Pow(features["black5"].current - 94.1176, 2.0) < 0.001) )) {
 				vars.moths = false;
 			}
 		}
@@ -246,13 +257,14 @@ update
 	// If moths were found when in the waiting for moths state, then enter the state of waiting for moths to end
 	if ( vars.waitingMothsStart && vars.moths ) {
 		vars.waitingMothsStart = false;
+		vars.mothsWereShown = true;
 		vars.waitingMothsEnd = true;
 	} 
 
 	// If we are waiting for moths to end and they are no longer present, then wait for the black screen to end
 	if ( vars.waitingMothsEnd && !vars.moths ) {
 		vars.waitingMothsEnd = false;
-		vars.waitingForBlackEnd = true;
+		//vars.waitingForBlackEnd = true;
 	}
 
 	// For death screen
@@ -272,16 +284,25 @@ update
 	// We must have always priorly entered a known loading screen condition+ and either:
 	// 1) the black screen ended when we were waiting for it
 	// 2) we were waiting for moths but the screen is no longer showign definitive black
-	if ( vars.loadingStarted && (
-		( vars.waitingForBlackEnd && !vars.isBlack ) ||
-		( vars.waitingMothsStart && !vars.isBlack  ) )) {
-		vars.loadingStarted = false;
+	if ( vars.loadingStarted ) { 
+		if (( vars.waitingForBlackEnd && !vars.isBlack ) ||
+		    ( vars.waitingMothsStart && !vars.isBlack  ) ) {	// in these cases add the 160 milliseconds
+			vars.loadingStarted = false;
 
-		vars.waitingForBlackEnd = false;
-		vars.waitingMothsEnd = false;
-		vars.waitingMothsStart = false;
+			vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, 160) );
+			vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
+		} else if( vars.mothsWereShown && !vars.waitingMothsEnd) {	// no need to adjust time
+			vars.loadingStarted = false;
+		}
+		if ( !vars.loadingStarted ) {
+			vars.waitingForBlackEnd = false;
+			vars.waitingMothsEnd = false;
+			vars.waitingMothsStart = false;
 
-		vars.waitingDeathEnd = false;
+			vars.mothsWereShown = false;
+
+			vars.waitingDeathEnd = false;
+		}
 	}
 	
 	vars.currentlyLoading = vars.loadingStarted || vars.backShown || vars.deathLoad;
