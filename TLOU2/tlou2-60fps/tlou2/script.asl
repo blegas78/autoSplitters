@@ -4,6 +4,7 @@ startup
 
 	vars.definitelyNotMoths = false;
 	vars.backShown = false;
+	vars.backPrimed = false;
 	vars.backPrior = false;
 
 	vars.skipFalling = false;
@@ -14,6 +15,7 @@ startup
 	vars.moths = false;
 	vars.waitingMothsStart = false;
 	vars.waitingMothsEnd = false;
+	vars.mothsWereShown = false;
 
 	vars.blackness = 0.0;
 	vars.isBlack = false;
@@ -37,13 +39,16 @@ update
 	// This logic ensures that the user actually pressed the back button to 
 	// avoid faults due to HUD incorrectly appearing
 	if(	features["BackButton"].current > 15.0 ) {
-		if ( vars.backShown == false ) {
+		if ( vars.backPrimed == false ) {
 			vars.backSavedTime = vars.timerModel.CurrentState.CurrentTime.GameTime;
+			vars.backPrimed = true;
 		}
 		
 		if (features["PauseCinematic"].current > 7 ||
 			features["PauseEncounter"].current > 7 ||
-			features["PauseCheckpoint"].current > 7 ) {
+			features["PauseCheckpoint"].current > 7 ||
+			features["PausePermadeathSkip"].current > 7 ||
+			features["PausePermadeathEncounter"].current > 7 ) {
 			if (vars.backShown == false) {
 				vars.timerModel.CurrentState.SetGameTime(vars.backSavedTime);
 				vars.ticksForTimeCorrection = vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds + 500;
@@ -53,6 +58,7 @@ update
 		
 	} else {
 		vars.backShown = false;
+		vars.backPrimed = false;
 	}
 	
 // This if is purely to aid in CPU usage optimization though the effects are probably negligible 
@@ -91,11 +97,11 @@ update
 
 	// This logic uses the concept of falling/rising edges to get the exact trigger when a skip cutscen was selected
 	vars.skipFalling = vars.skipWasPrimed && !vars.backShown;
-	vars.skipWasPrimed = vars.backShown && (features["SkipCinematic"].current > 15.0);
+	vars.skipWasPrimed = (features["SkipCinematic"].current > 15.0) && vars.backShown;
 
 	// Similar to the logic above, but for detecting the instant RE/RC was selected
 	vars.restartFalling = vars.restartWasPrimed && !vars.backShown;
-	vars.restartWasPrimed =	vars.backShown && (features["Restart"].current > 15.0);
+	vars.restartWasPrimed =	(features["Restart"].current > 15.0) && vars.backShown;
 
 	// Per ScarlettTheHuman/Happy_Asteroid/Kevin700p's findings, each RE/RC should add 1 second to the timer
 	if(vars.restartFalling) {
@@ -111,13 +117,13 @@ update
 	}
 
 	// Hysteresis on the "NEXT" in death loading due to fade-in: 
-	if( !vars.deathLoad && features["DeathNext"].current > 15.0 ) {
+	if( (features["DeathNext"].current > 15.0) && !vars.deathLoad ) {
 		vars.deathLoad = true;
 		vars.deathRising = true;
 	} else {
 		vars.deathRising = false;
 	}
-	if( vars.deathLoad && features["DeathNext"].current < 5.0) {
+	if( (features["DeathNext"].current < 5.0) && vars.deathLoad ) {
 		vars.deathLoad = false;
 	}
 
@@ -172,11 +178,11 @@ update
 	// Note on imprecision: rounding the milliseconds from 11.001001 to 11 results in an error of 1.82 seconds over 5 hours
 	if( !vars.currentlyLoading && vars.timerModel.CurrentState.CurrentTime.GameTime.TotalMilliseconds >= vars.ticksForTimeCorrection) {
 		// 60-fps:
-		// vars.ticksForTimeCorrection += 960;
-		// vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
+		vars.ticksForTimeCorrection += 960;
+		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -41) );
 		// 29.97fps:
-		vars.ticksForTimeCorrection += 990;
-		vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
+		// vars.ticksForTimeCorrection += 990;
+		//vars.timerModel.CurrentState.SetGameTime(vars.timerModel.CurrentState.CurrentTime.GameTime + new TimeSpan( 0, 0, 0, 0, -11) );
 	}
 	
 	// At start of IGT, reset the comparison for time correction:
@@ -210,6 +216,8 @@ update
 		
 		vars.waitingForBlackEnd = false;
 		vars.waitingMothsEnd = false;
+		vars.mothsWereShown = false;
+		
 		vars.isBlack = true; // HACK: doing this since the below will think loading is done, not black.
 		
 	}

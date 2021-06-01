@@ -95,6 +95,48 @@
         </WatchZone>
 
 	<WatchZone>
+            <Name>PausePermadeathSkip</Name>
+            <Geometry>
+              <X>115</X>
+              <Y>695</Y>
+              <Width>66</Width>
+              <Height>23</Height>
+            </Geometry>
+            <Watches>
+              <Watcher>
+                <Name>Skip</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+                <WatchImages>
+                  <WatchImage>
+                    <FilePath>imgs\SkipPause.png</FilePath>
+                  </WatchImage>
+                </WatchImages>
+              </Watcher>
+            </Watches>
+        </WatchZone>
+
+	<WatchZone>
+            <Name>PausePermadeathEncounter</Name>
+            <Geometry>
+              <X>115</X>
+              <Y>663</Y>
+              <Width>66</Width>
+              <Height>23</Height>
+            </Geometry>
+            <Watches>
+              <Watcher>
+                <Name>Skip</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+                <WatchImages>
+                  <WatchImage>
+                    <FilePath>imgs\SkipPause.png</FilePath>
+                  </WatchImage>
+                </WatchImages>
+              </Watcher>
+            </Watches>
+        </WatchZone>
+
+	<WatchZone>
             <Name>Restart</Name>
             <Geometry>
               <X>484</X>
