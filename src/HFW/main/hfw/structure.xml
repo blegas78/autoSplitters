@@ -5,17 +5,17 @@
     <Screen>
       <Name>Game</Name>
       <Geometry>
-        <Width>55</Width>
-        <Height>22</Height>
+        <Width>      </Width>
+        <Height>      </Height>
       </Geometry>
       <WatchZones>
         <WatchZone>
           <Name>isLoading</Name>
           <Geometry>
-            <X>0</X>
-            <Y>0</Y>
-            <Width>55</Width>
-            <Height>22</Height>
+            <X>      </X>
+            <Y>      </Y>
+            <Width>      </Width>
+            <Height>      </Height>
           </Geometry>
           <Watches>
             <Watcher>
@@ -23,7 +23,7 @@
               <ErrorMetric>PeakAbsolute</ErrorMetric>
               <WatchImages>
                 <WatchImage>
-                  <FilePath>img\loading.png</FilePath>
+                  <FilePath>imgs\loading.png</FilePath>
                 </WatchImage>
               </WatchImages>
             </Watcher>
