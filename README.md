@@ -13,15 +13,14 @@ These seem to work VERY well on my end, however different setups may cause diffe
 Although I *HIGHLY* Recommend testing this before attempting a run each day by doing a quick test.
 With all of the above up and running and showing IGT,  try to start the timer then invoke a load based on whatever the definition of a load is for your game.
 
-Please also see the Change Log in each load remover description regarding the reason for updates to .vas files.
+###### Please also see the Change Log in each load remover description regarding the reason for updates to .vas files.
+###### If you encounter a problem or issue, feel free to check the troubleshooting section further down below.
 
 
 ## Setup
 
 #### This assumes that you already have LiveSplit installed.  If not, please visit the [LiveSplit release page](https://github.com/LiveSplit/LiveSplit/releases).
-
-
-I recommend a reboot before installation to avoid any headaches. The first thing that needs to be done is share the video from OBS to LiveSplit.
+I recommend a reboot before installation to avoid any headaches.
 
 
 ### Requirements
@@ -60,6 +59,8 @@ Installation of the VAS should be complete.  You will at a minimum need to resta
 
 
 ### 2. Feeding the game video feed to LiveSplit
+
+The next thing that needs to be done is share the video from OBS to LiveSplit.
 
 ###### This assumes that you already have some flavor of OBS installed.  If not, please visit the [OBS release page](https://github.com/obsproject/obs-studio/releases). A recording software by the name of XSplit also has a Virtual Cam feature wich will not be covered here.
 
@@ -133,31 +134,35 @@ Navigate to `Settings`
 
 ## General troubleshooting
 
-##### Please also check the readme's of the specific load remover you're using.
+#### Please also check the readme's of the specific load remover you're using.
 
 I will build this section more and more as people run into issues with setup. Please contact me if you have issues with setup, installation, or if you have inconsistencies in load times.
 
 
 #### Problem: Load pauses worked, but in the middle of the run they stop pausing or unpausing.
-- Solution: In LiveSplit restart the load remover by: Right-Click - Open Layout - select your layout
+- **Solution**: In LiveSplit restart the load remover by: Right-Click - Open Layout - select your layout
 
 
 #### Problem: I regularly get crashes in the middle of runs.
-- Solution: Your CPU may be overloaded.  Try reducing your CPU load by closing unnecessary programs.  I have had to eliminate Streamlabs Emote Walls since that regularly consumes 20% CPU on my end.  I have also heard success regarding stopping local recordings (this sucks but all hardware is different).
-- Solution 2: This may also be caused by a specific combination of software (VAS, LiveSplit, OBS). Try a different versions.
+- Cause 1
+  - Your CPU may be overloaded.
+  - **Solution**: Try reducing your CPU load by closing unnecessary programs.  I have had to eliminate Streamlabs Emote Walls since that regularly consumes 20% CPU on my end.  I have also heard success regarding stopping local recordings (this sucks but all hardware is different).
+- Cause 2
+  - This may also be caused by specific combinations of software (VAS, LiveSplit, OBS).
+  - **Solution**: Feel free to try different versions.
 
 
 
 #### Problem: `Scan Region` tab in the VAS' settings doesn't show a preview
 ###### This assumes you already have OBS running and outputting an image through via the virtual cam
-- Solution: There's no real fix for this (yet) other than restarting LiveSplit or reloading your layout until it shows up.
+- **Solution**: There's no real fix for this (yet) other than restarting LiveSplit or reloading your layout until it shows up.
 ###### Problem brought up by ScrambledEggsChef and JustSaft
 
 
 
 #### Problem: `Start Virtual Cam` button doesn't show up
 ###### This assuems you have a OBS version newer than 26.x.x
-- You might be using a portable version of OBS, in this case this option won't show up for reasons yet unknown to me.
+- You might be using a portable version of OBS, in this case this option won't show up.
 
 
 
@@ -171,18 +176,17 @@ I will build this section more and more as people run into issues with setup. Pl
 
 - Cause 1
   - You may be using LiveSplit version 1.8.16 (and/or newer). For unknown reasons this version of LiveSplit totally ignores the VAS. This may be fixable through a patch on the VAS developer's end.
-  - **Solution:** Downgrade LiveSplit [(LiveSplit releases page)](https://github.com/LiveSplit/LiveSplit/releases)
+  - **Solution**: Downgrade LiveSplit [(LiveSplit releases page)](https://github.com/LiveSplit/LiveSplit/releases)
 - Cause 2
   - Your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.
-  - **Solution:** Right-click the LiveSplit window, select `Compare Against` -> `Game Time`
+  - **Solution**: Right-click the LiveSplit window, select `Compare Against` -> `Game Time`
 
 
-## Weird Problems™
+## Problems
 
 - Kevin700P has had trouble streaming and using the load remover at the same time.  Turns out his phone was plugged into his stream computer (a laptop) and unplugging the phone lets him do both at once.
-
-- Pdub had configured his capture card confirgured to a resolution of 1280x720 and it caused issues.
-
+- Pdub had configured his capture card to a resolution of 1280x720 and it caused issues.
+- ikeden had a filter for increasing the brightness of his game capture source for streaming purposes. This resulted in the TLOU loadremover not correctly identifying the Moth Screens™ 
 
 
 ## My Settings
