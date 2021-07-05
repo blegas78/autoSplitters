@@ -11,13 +11,9 @@ This load remover checks the video feed for the "Loading...", and tells LiveSpli
 
 These seem to work VERY well on my end, however different setups may cause different issues.  Also there could be some scenerios in which they break.  
 
-The HZD load remover has worked great for a few people.   So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings.  I recommend starting with hzd.vas, checking your video settings, and if all that fails then try the hzdAussie.vas file which i built with minimally different tunings.  Currently only English is supported.
-
-- hzd.vas: Tunings that work for me.
-- hzdAussie.vas: Tunings that have worked for others, including a person that had success using PS4Share.
+The HZD load remover has worked great for a few people. So far measuring the loadless times compared to what the load remover does live has resulted in less than 1 second of error over 2-3 hour runs.  Setup has not been too hard, except that one person needed some numbers changed probably due to some video settings. 
 
 Please see the Change Log to regarding the reason for updates to the .vas files.
-
 
 
 ## Testing
@@ -25,11 +21,27 @@ Please see the Change Log to regarding the reason for updates to the .vas files.
 I *HIGHLY* Recommend testing this before attempting a run each day by doing a quick test.
 With all of the above up and running and showing IGT, try to start the timer then invoke a load by simply performing a fast-travel or loading a save.
 
+## Scan Region settings
+If using `normal.vas` or `remoteplay.vas` make sure to use the following Scan Region settings:
  - VAS Scan Region settings
    - X is set to 99
    - Y is set to 976
    - Width is set to 115
    - Height is set to 25
+   
+If you use `german.vas`:
+ - VAS Scan Region settings
+   - Set X to 99
+   - Set Y to 976
+   - Set Width to 82
+   - Set Height to 22
+
+Or if you use `classic.vas`:
+ - VAS Scan Region settings
+   - Set X to 0
+   - Set Y to 0
+   - Set Width to 1920
+   - Set Height to 1080
 
 
 ##  Change Log
