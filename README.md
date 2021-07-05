@@ -78,6 +78,8 @@ Your game feed should now be fed to a virtual webcam with the name designated un
 
 #### Video Auto Splitter
 
+The set of ".vas" files can be found in the [Releases Page](https://github.com/blegas78/autoSplitters/releases/)
+
 1. Download the ".vas" game profile from this page for your corresponding game.
 2. Open LiveSplit, and open your layout if not open.
 3. Right-click Live-Split, and choose "Edit Layout..."
