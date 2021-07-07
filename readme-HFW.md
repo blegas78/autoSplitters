@@ -1,6 +1,9 @@
 # Load Removers for `Horizon Forbidden West™`™
 
+The latest load removers (.vas files) can be downloaded on the [Release Page here](https://github.com/blegas78/autoSplitters/releases) (No HFW since it doesn't exist)
+
 #### Just as a preperation for adding HFW load removers to the collection :)
+
 
 
 ###### Don't kill Aloy pls

@@ -5,6 +5,7 @@ In this case, quite simply, a load is defined whenever "Loading..." is seen in t
 This includes few cut scene pauses in the beginning of Any% runs, as well as every time a fast travel is performed.
 This load remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
 
+The latest load removers (.vas files) can be downloaded on the [Release Page here](https://github.com/blegas78/autoSplitters/releases)
 
 ## Testing
 
