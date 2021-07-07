@@ -45,6 +45,7 @@ There may be issues in installation for different versions of software, but don'
  - [Video Auto Splitter 0.5.2.3](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases)
  - [OBS 25.0.4](https://github.com/obsproject/obs-studio/releases)
  - [OBS-VirtualCam 2.0.4](https://github.com/CatxFish/obs-virtual-cam/releases)
+ - [The Game Profile (.vas file) for your game from the Release Page here](https://github.com/blegas78/autoSplitters/releases)
 
 ###### I have also heard reports that versions newer than the above list also work. Thank you Aquila_Ezio!
 
