@@ -14,9 +14,16 @@ With all of the above up and running and showing IGT, try to start the timer and
 
 ## Variants & Scan Region settings (notice me senpai)
 
+### PC (memory based)*
+
+You should be using this variant if on pc. You may deviate.
+
+> This should be available in LiveSplit itself soon™️ and the `.asl` file can be found in `src/HZD variants/pc/hzd`
+
+
 ### Normal
 
-You should be using this variant. You may deviate tho
+You should be using this variant if doing runs on console. You may deviate.
 
  - Scan Region settings
    - X is set to 99
@@ -70,6 +77,6 @@ The german language has the smallest loading indicator text on loading screens p
   - Enforcing a refresh rate of 30fps
 - Added support for the german language
 
-## Problems/Issues/Known Issues specific to this load remover
+## Problems/Issues specific to this load remover
 
 ###### none so far
