@@ -4,6 +4,8 @@ I am active in the Horizon Zero Dawn and The Last Of Us (1/2) communities.  Thes
 
 Video with information and installation: [https://www.youtube.com/watch?v=lmLSUKhvSrg](https://www.youtube.com/watch?v=lmLSUKhvSrg) (to be updated)
 
+The latest load removers (.vas files) can be downloaded on the [Release Page here](https://github.com/blegas78/autoSplitters/releases)
+
 
 ##  Do they work?
 
@@ -43,6 +45,7 @@ There may be issues in installation for different versions of software, but don'
  - [Video Auto Splitter 0.5.2.3](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases)
  - [OBS 25.0.4](https://github.com/obsproject/obs-studio/releases)
  - [OBS-VirtualCam 2.0.4](https://github.com/CatxFish/obs-virtual-cam/releases)
+ - [The Game Profile (.vas file) for your game from the Release Page here](https://github.com/blegas78/autoSplitters/releases)
 
 ###### I have also heard reports that versions newer than the above list also work. Thank you Aquila_Ezio!
 
@@ -119,7 +122,7 @@ Navigate to `Settings`
 
 ### 4. Video Auto Splitter
 
-1. Download your desired `.vas` file
+1. Download your desired `.vas` file from the [Release Page here](https://github.com/blegas78/autoSplitters/releases)
 2. Open LiveSplit and your layout if not open
 3. At this stage your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT. Right-click the LiveSplit window, then select `Compare Against` -> `Game Time`
 4. Right-click the LiveSplit window again, this time choose `Edit Layout...`
