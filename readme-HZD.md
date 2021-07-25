@@ -9,22 +9,18 @@ The latest load removers (.vas files) can be downloaded on the [Release Page her
 
 ## Testing
 
-I *HIGHLY* Recommend testing this before attempting a run each day by doing a quick test.
-With all of the above up and running and showing IGT, try to start the timer and invoke a load by simply performing a fast-travel or loading a save.
+I **HIGHLY** Recommend testing this before attempting a run each day by doing a quick test.
 
+With all of the above up and running and showing IGT, try to start the timer and invoke a load by simply performing a fast-travel or loading a save.
 
 ## Variants & Scan Region settings (notice me senpai)
 
-### PC (memory based)*
 
-You should be using this variant if on pc. You may deviate.
+### Normal variant
 
-> This should be available in LiveSplit itself soon™️ and the `.asl` file can be found in `src/HZD variants/pc/hzd`
+This is the best working, recommended variant for any runs on any platform.
 
-
-### Normal
-
-You should be using this variant if doing runs on console. You may deviate.
+###### More CPU performance sold seperatly OpieOP
 
  - Scan Region settings
    - X is set to 99
@@ -32,21 +28,21 @@ You should be using this variant if doing runs on console. You may deviate.
    - Width is set to 115
    - Height is set to 25
 
+
+### PC variant (memory based)*
+
+You should use this variant if on pc once development finishes.
+
+> This should be available in LiveSplit itself soon™
+
+###### If you still want to test this, the `.asl` file can be found in `src/HZD variants/pc` (Please report your feedback to JustSaft#9233 on Discord)
+
+
 ### PSShare variant
 
-Variant with tunings for using PS4Share
- - Scan Region settings
-   - same as above
+Variant with tunings for using PS4Share.
 
-
-### Classic variant
-I added a classic variant where the scan region settings are the same as before this update (just as a backup)
-
- - Scan Region settings
-   - Set X to 0
-   - Set Y to 0
-   - Set Width to 1920
-   - Set Height to 1080
+Scan Region settings are the same as the Normal variant.
 
 
 ### German variant
@@ -58,8 +54,19 @@ The german language has the smallest loading indicator text on loading screens p
    - Set Width to 55
    - Set Height to 22
 
+### Classic variant
+I added a classic variant where the scan region settings are the same as before this update (just as a backup)
 
-### Experimental variant*
+ - Scan Region settings
+   - Set X to 0
+   - Set Y to 0
+   - Set Width to 1920
+   - Set Height to 1080
+
+
+### Dev variant*
+
+This variant was originally intended to see how small the WatchZone can be before loosing accuracy (the experiment was never finished ikedenS)
 
  - Scan Region settings
    - Set X to 99
@@ -67,7 +74,7 @@ The german language has the smallest loading indicator text on loading screens p
    - Set Width to 48
    - Set Height to 25
 
-###### *These are a little experimental atm because there's a small risk that the VAS component may misrecognize some gameplay as a load - so for the moment: use at your own risk.
+###### *LRs marked with an asterisk are experimental at the moment.
 
 ##  Change Log
 
