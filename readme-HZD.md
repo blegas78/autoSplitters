@@ -5,7 +5,7 @@ In this case, quite simply, a load is defined whenever "Loading..." is seen in t
 This includes few cut scene pauses in the beginning of Any% runs, as well as every time a fast travel is performed.
 This load remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
 
-The latest load removers (.vas files) can be downloaded on the [Release Page here](https://github.com/blegas78/autoSplitters/releases)
+#### The latest load removers (`.vas` files) can be downloaded on the [`Releases Page`](https://github.com/blegas78/autoSplitters/releases)
 
 ## Testing
 
@@ -14,7 +14,6 @@ I **HIGHLY** Recommend testing this before attempting a run each day by doing a 
 With all of the above up and running and showing IGT, try to start the timer and invoke a load by simply performing a fast-travel or loading a save.
 
 ## Variants & Scan Region settings (notice me senpai)
-
 
 ### Normal variant
 
@@ -29,14 +28,15 @@ This is the best working, recommended variant for any runs on any platform.
    - Height is set to 25
 
 
-### PC variant (memory based)*
+### PC (memory based) variants (Steam version only) *
 
-You should use this variant if on pc once development finishes.
+You should use this variant for any runs on PC once development finishes.
 
-> This should be available in LiveSplit itself soon™
+> If you still want to test this, the `.asl` file can be found in `src/HZD variants/pc`.
 
-###### If you still want to test this, the `.asl` file can be found in `src/HZD variants/pc` (Please report your feedback to JustSaft#9233 on Discord)
+Currently, this load remover only works with the [Steam](https://store.steampowered.com/app/1151640/Horizon_Zero_Dawn_Complete_Edition/) edition of the game.
 
+> The memory based LR should be available in LiveSplit itself once one `.asl` file works with the EGS, Steam and GOG edition of the game.
 
 ### PSShare variant
 
@@ -64,7 +64,7 @@ I added a classic variant where the scan region settings are the same as before 
    - Set Height to 1080
 
 
-### Dev variant*
+### Dev variant *
 
 This variant was originally intended to see how small the WatchZone can be before loosing accuracy (the experiment was never finished ikedenS)
 
