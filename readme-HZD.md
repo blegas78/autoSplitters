@@ -1,6 +1,6 @@
 # Load Removers for `Horizon Zero Dawn™`™
 
-These autosplitters were built based on the rules on [speedrun.com/hzd](https://www.speedrun.com/hzd) for the load-time definition.
+These autosplitters were built based on the rules on [`speedrun.com/hzd`](https://www.speedrun.com/hzd) for the load-time definition.
 In this case, quite simply, a load is defined whenever "Loading..." is seen in the bottom left corner of the screen.
 This includes few cut scene pauses in the beginning of Any% runs, as well as every time a fast travel is performed.
 This load remover checks the video feed for the "Loading...", and tells LiveSplit that it is a load whenever this appears.
@@ -22,46 +22,49 @@ This is the best working, recommended variant for any runs on any platform.
 ###### More CPU performance sold seperatly OpieOP
 
  - Scan Region settings
-   - X is set to 99
-   - Y is set to 976
-   - Width is set to 115
-   - Height is set to 25
+   - X: 99
+   - Y: 976
+   - Width: 115
+   - Height: 25
 
-
-### PC (memory based) variants (Steam version only) *
+### PC (memory based) variant (Steam version only) *
 
 You should use this variant for any runs on PC once development finishes.
+Currently, this load remover only works with the [Steam](https://store.steampowered.com/app/1151640/Horizon_Zero_Dawn_Complete_Edition/) edition of the game.
 
 > If you still want to test this, the `.asl` file can be found in `src/HZD variants/pc`.
 
-Currently, this load remover only works with the [Steam](https://store.steampowered.com/app/1151640/Horizon_Zero_Dawn_Complete_Edition/) edition of the game.
-
 > The memory based LR should be available in LiveSplit itself once one `.asl` file works with the EGS, Steam and GOG edition of the game.
 
-### PSShare variant
+### Variant for a screen resolution of 3440x1440
 
-Variant with tunings for using PS4Share.
+ - Scan Region settings
+   - X: 572
+   - Y: 1300
+   - Width: 153
+   - Height: 31
 
-Scan Region settings are the same as the Normal variant.
+### PS Remote Play variant
 
+Variant with tunings for using [`PS Remote Play`](https://www.playstation.com/en-us/remote-play/). Uses the same scan region settings as the normal variant.
 
 ### German variant
 The german language has the smallest loading indicator text on loading screens pepeEZ
 
  - Scan Region settings
-   - Set X to 99
-   - Set Y to 976
-   - Set Width to 55
-   - Set Height to 22
+   - X: 99
+   - Y: 976
+   - Width: 55
+   - Height: 22
 
 ### Classic variant
 I added a classic variant where the scan region settings are the same as before this update (just as a backup)
 
  - Scan Region settings
-   - Set X to 0
-   - Set Y to 0
-   - Set Width to 1920
-   - Set Height to 1080
+   - X: 0
+   - Y: 0
+   - Width: 1920
+   - Height: 1080
 
 
 ### Dev variant *
