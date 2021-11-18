@@ -1,3 +1,8 @@
+## Download
+#### You can download the latest `.vas` files here: [`Releases Page`](https://github.com/blegas78/autoSplitters/releases)
+##
+
+
 # Load Removers
 
 I am active in the Horizon Zero Dawn and The Last Of Us (1/2) communities.  These efforts are intended to aid the communities to make live speedrunning times more comparable and therefore, hopefully,  more enjoyable.  If the tools are effective enough, this will eliminate the need to manually calculate your In-Game Time (IGT) through use of a video editor, which can be a laborious task for both runners and leaderboard moderators.
@@ -7,9 +12,8 @@ These load removers are based on reading the HUD in particular places. Both the 
 The VAS is only one necessary component. You also need to get a video source from your game into the VAS component.
 Since OBS version 26 the previosly required [OBS-VirtualCam](https://github.com/CatxFish/obs-virtual-cam) is no longer strictly needed, as from this release onwards a virtual cam feature is shipped with OBS itself. XSplit also has a Virtual Camera feature.
 
-Video with information and installation: [`https://www.youtube.com/watch?v=lmLSUKhvSrg`](https://www.youtube.com/watch?v=lmLSUKhvSrg) (to be updated)
+Video with information and installation: [`https://www.youtube.com/watch?v=lmLSUKhvSrg`](https://www.youtube.com/watch?v=lmLSUKhvSrg) *(out of date)*
 
-#### The latest load removers (`.vas` files) can be downloaded on the [`Releases Page`](https://github.com/blegas78/autoSplitters/releases)
 
 ###### Please also see the change log in each load remover's description regarding the reason for updates to `.vas` files.
 
@@ -89,7 +93,7 @@ Navigate to `Settings`
 
 #### Under: `Sound and Screen` -> `Display Area Settings`:
 
- - Enlarge the setting to the maximum setting, until `Englarge` becomes greyed.
+ - Enlarge the setting to the maximum setting, until `Enlarge` becomes greyed.
 
 #### Under: `Sound and Screen` -> `Video Output Settings` -> `Video Output Information`:
 
@@ -139,7 +143,8 @@ I will build this section more and more as people run into issues with setup. Pl
 
 
 #### Problem: Load pauses worked, but in the middle of the run they stop pausing or unpausing.
-- **Solution**: In LiveSplit restart the load remover by: Right-Click - Open Layout - select your layout
+- **Solution 1**: In LiveSplit restart the load remover by: Right-Click - Open Layout - select your layout
+- **Solution 2**: Assuming you're using OBS' built-in vitual cam, use the Virtualcam Plugin instea
 
 
 #### Problem: I regularly get crashes in the middle of runs.
@@ -153,8 +158,8 @@ I will build this section more and more as people run into issues with setup. Pl
 
 
 #### Problem: `Scan Region` tab in the VAS' settings doesn't show a preview
-###### This assumes you already have OBS running and outputting an image through via the virtual cam
-- **Solution**: Use the virtualcam plugin
+###### This assumes you already have OBS running and outputting an image via the built-in virtual cam
+- **Solution**: There's no real fix for this other than restarting LiveSplit and praying it works until the end of the run. However you can use the Virtualcam Plugin instead wich doesn't have this issue
 ###### Problem brought up by ScrambledEggsChef and JustSaft
 
 
@@ -175,7 +180,7 @@ I will build this section more and more as people run into issues with setup. Pl
 
 - Cause 1
   - You may be using LiveSplit version 1.8.16 (and/or newer). For unknown reasons this version of LiveSplit totally ignores the VAS. This may be fixable through a patch on the VAS developer's end.
-  - **Solution**: Downgrade LiveSplit [(LiveSplit releases page)](https://github.com/LiveSplit/LiveSplit/releases)
+  - **Solution**: Downgrade LiveSplit. See [(LiveSplit releases page)](https://github.com/LiveSplit/LiveSplit/releases)
 - Cause 2
   - Your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.
   - **Solution**: Right-click the LiveSplit window, select `Compare Against` -> `Game Time`
