@@ -56,6 +56,15 @@ The german language has the smallest loading indicator text on loading screens p
    - Y: 976
    - Width: 55
    - Height: 22
+   
+### Brazilian Portuguese (pt-br) variant
+Thanks to Habeebs for this variant!
+
+ - Scan Region settings
+   - X: 86
+   - Y: 971
+   - Width: 190
+   - Height: 35
 
 ### Classic variant
 I added a classic variant where the scan region settings are the same as before this update (just as a backup)
