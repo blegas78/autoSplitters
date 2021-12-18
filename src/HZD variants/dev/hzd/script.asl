@@ -1,10 +1,4 @@
-init
-{
-    // reduces CPU usage by halfing the amount of frames per secound... maybe
-    var refreshRate = 30;
-}
-
 isLoading
 {
-	return features["isLoading"].current > 15.0;
+	return (features["isLoading"].current > 11.0) || (features ["IsRFSUnavail"].current > 11.0);
 }
