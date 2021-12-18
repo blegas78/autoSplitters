@@ -15,10 +15,10 @@ With all of the above up and running and showing IGT, try to start the timer and
 
 ## Variants & Scan Region settings (notice me senpai)
 
+
 ### Normal variant
 
 This is the best working, recommended variant for any runs on any platform.
-
 ###### More CPU performance sold seperatly OpieOP
 
  - Scan Region settings
@@ -26,6 +26,7 @@ This is the best working, recommended variant for any runs on any platform.
    - Y: 976
    - Width: 115
    - Height: 25
+
 
 ### PC (memory based) variant (Steam version only) *
 
@@ -36,17 +37,11 @@ Currently, this load remover only works with the [Steam](https://store.steampowe
 
 > The memory based LR should be available in LiveSplit itself once one `.asl` file works with the EGS, Steam and GOG edition of the game.
 
-### Variant for a screen resolution of 3440x1440
-
- - Scan Region settings
-   - X: 572
-   - Y: 1300
-   - Width: 153
-   - Height: 31
 
 ### PS Remote Play variant
 
 Variant with tunings for using [`PS Remote Play`](https://www.playstation.com/en-us/remote-play/). Uses the same scan region settings as the normal variant.
+
 
 ### German variant
 The german language has the smallest loading indicator text on loading screens pepeEZ
@@ -66,6 +61,18 @@ Thanks to Habeebs for this variant!
    - Width: 190
    - Height: 35
 
+### Dev variant
+
+This LR now introduces efforts that were talked about blegas's episode of the WTDW Podcast:
+ - This LR checks if the RESTART FROM SAVE option in the pause menu is *highlighted* and *unavailiable*
+
+ - Scan Region settings
+   - Set X to 0
+   - Set Y to 0
+   - Set Width to 1920
+   - Set Height to 1080
+
+
 ### Classic variant
 I added a classic variant where the scan region settings are the same as before this update (just as a backup)
 
@@ -75,18 +82,6 @@ I added a classic variant where the scan region settings are the same as before 
    - Width: 1920
    - Height: 1080
 
-
-### Dev variant *
-
-This variant was originally intended to see how small the WatchZone can be before loosing accuracy (the experiment was never finished ikedenS)
-
- - Scan Region settings
-   - Set X to 99
-   - Set Y to 976
-   - Set Width to 48
-   - Set Height to 25
-
-###### *LRs marked with an asterisk are experimental at the moment.
 
 ##  Change Log
 
