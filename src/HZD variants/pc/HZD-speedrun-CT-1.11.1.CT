@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"GameEng MAYBE"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>2B10E33F9AC</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"pointerscan result"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>"HorizonZeroDawn.exe"+071346C8</Address>
+          <Offsets>
+            <Offset>E1C</Offset>
+            <Offset>8E8</Offset>
+            <Offset>F80</Offset>
+            <Offset>F78</Offset>
+            <Offset>A88</Offset>
+            <Offset>E38</Offset>
+            <Offset>4E8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"pointerscan result"</Description>
+          <LastState Value="0" RealAddress="1D0A1BF522C"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>"HorizonZeroDawn.exe"+07138C78</Address>
+          <Offsets>
+            <Offset>3BC</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"MapSelectedInMenu"</Description>
+      <LastState Value="0" RealAddress="7FF75153A413"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>"HorizonZeroDawn.exe"+0231A020</Address>
+      <Offsets>
+        <Offset>EB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32</ID>
+      <Description>"random"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>17</ID>
+          <Description>"pointerscan result"</Description>
+          <LastState Value="257" RealAddress="7FF751A5DB28"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"HorizonZeroDawn.exe"+028367A8</Address>
+          <Offsets>
+            <Offset>4D8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>23</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7521B1765"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2F91765</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF755D8240B"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+6B6240B</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"MapInventory"</Description>
+      <LastState Value="1" RealAddress="7FF751A5DB29"/>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+283DB29</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"pointerscan result"</Description>
+          <LastState Value="1" RealAddress="7FF751A5DB29"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>"HorizonZeroDawn.exe"+0283D6A0</Address>
+          <Offsets>
+            <Offset>599</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>28</ID>
+      <Description>"NewValue2"</Description>
+      <LastState Value="0" RealAddress="7FF7518C2AAA"/>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+26A2AAA</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"pointerscan result"</Description>
+          <LastState Value="0" RealAddress="7FF7518C2AAA"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>"HorizonZeroDawn.exe"+026A2AC0</Address>
+          <Offsets>
+            <Offset>12</Offset>
+            <Offset>C8</Offset>
+            <Offset>130</Offset>
+            <Offset>10</Offset>
+            <Offset>A0</Offset>
+            <Offset>C0</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>30</ID>
+      <Description>"MapInventory"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"1"</Description>
+          <LastState Value="0" RealAddress="7FF751A5DCC9"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+283DCC9</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>31</ID>
+              <Description>"pointerscan result"</Description>
+              <LastState Value="1" RealAddress="7FF751A5DCC8"/>
+              <VariableType>Byte</VariableType>
+              <Address>"HorizonZeroDawn.exe"+0283DC98</Address>
+              <Offsets>
+                <Offset>B8</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"2"</Description>
+          <LastState Value="0" RealAddress="7FF751A5E039"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+283E039</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
