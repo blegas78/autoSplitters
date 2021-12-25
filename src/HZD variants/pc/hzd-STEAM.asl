@@ -11,6 +11,13 @@ state("HorizonZeroDawn", "v1.11.1")
     // 1 = true
     // 0 = false
     byte MapInventory : "HorizonZeroDawn.exe", 0x0283D6A0, 0x599;
+    // Map open (same one as in v1.10)
+    // 0 = false
+    // 1 = window not in focus or something else (wtf?)
+    // 16777217 = true
+    // -> Not useful for this load remover
+    //uint MapSelectedInMenu : "HorizonZeroDawn.exe", 0x0231A020, 0xE8;
+    byte MapSelectedInMenu : "HorizonZeroDawn.exe", 0x0231A020, 0xE8;
 
 
     // Maybe the same as GameEnginePaused from v1.10
@@ -20,14 +27,7 @@ state("HorizonZeroDawn", "v1.11.1")
 
     // New Value:
     // **Should** be 0 if not loading.
-    byte NewValue2 : "HorizonZeroDawn.exe", 0x026A2AC0, 0xC0, 0xA0, 0x10, 0x130, 0xC8, 0x12;
-
-
-    // Map open (same one as in v1.10)
-    // 0 = false
-    // 1 = true
-    // -> Not useful for this load remover
-    uint MapSelectedInMenu : "HorizonZeroDawn.exe", 0x0231A020, 0xE8;
+    byte NewValue2 : "HorizonZeroDawn.exe", 0x026A2AC0, 0xF0, 0x70, 0x10, 0x88, 0x12;
 
 
     // literally something
@@ -83,7 +83,7 @@ startup
     // Syntax: settings.Add(id, default_value = true, description = null, parent = null)
     settings.Add("moreRefreshRate", false, "Use a refresh rate of 20");
     settings.Add("print", true, "Print debug output");
-    settings.Add("PauseOnPauseMenu", true, "Pause the timer on the Pause menu");
+    settings.Add("PauseOnPauseMenu", false, "Pause the timer on the Pause menu");
 }
 
 update
@@ -95,19 +95,23 @@ update
 
     // Checking settings - there's probably a better way to do this but here we go LUL
     if (settings["moreRefreshRate"])
-        { refreshRate = 20; } else { refreshRate = 1; };
+        { refreshRate = 20; } else { refreshRate = 8; };
 
     // Debug printing
     // When a debug print is needed, maybe add it here
     if (settings["print"])
     {
         print(
-            "[LR DEBUG] MapInventory: "
+            "[LR DEBUG] MapInventory:"
             + current.MapInventory
-            + " GameEng: "
+            + " GameEng:"
             + current.GameEnginePaused
-            + " NewValue2: "
+            + " NewValue2:"
             + current.NewValue2
+            + " MapSelectedInMenu:"
+            + current.MapSelectedInMenu
+            + " IsLoading:"
+            + vars.isCurrentlyLoading
         );
     };
 
@@ -115,19 +119,20 @@ update
     // Loading check
     if (current.GameEnginePaused == 1)
     {
-        if (current.NewValue2 >= 1)
+        if (current.NewValue2 != 0)
         {
             vars.isCurrentlyLoading = true;
         }
-        else if (current.GameEnginePaused == 1 && current.MapInventory == 0 && MapSelectedInMenu == 0)
+        else if (settings["PauseOnPauseMenu"])
         {
-            vars.isCurrentlyLoading = true;
+            if (current.GameEnginePaused == 1 && current.MapInventory == 0 && current.MapSelectedInMenu == 0)
+                vars.isCurrentlyLoading = true;
         }
         else vars.isCurrentlyLoading = false;
     }
     else vars.isCurrentlyLoading = false;
 
-    /* // Scars attempt at the loading check 
+    /* // Scars attempt at the loading check
     if (current.GameEnginePaused == 1)
     {
         if (current.MapInventory == 0)
@@ -159,12 +164,13 @@ update
 init
 {
     // Debug print
-    if (settings["print"]) { print("[LR DEBUG] Found HZD process!"); }
+    if (settings["print"])
+        { print("[LR DEBUG] Found HZD process!"); }
 
     // Check first module size to determine game version
     // I don't know any other sizes, so we're doing this
     if (modules.First().ModuleMemorySize == 150884352)
-    { version = "v1.11.1"; } else { version = "v1.10"; };
+        { version = "v1.11.1"; } else { version = "v1.10"; };
 
     // A refresh rate of 10 should be all we need
     // since doing more than this takes a lot of CPU overhead away.
