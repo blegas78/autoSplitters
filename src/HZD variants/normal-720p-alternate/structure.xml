@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Horizon Zero Dawn</Name>
+  <Screens>
+    <Screen>
+      <Name>Game</Name>
+      <Geometry>
+        <Width>91</Width>
+        <Height>31</Height>
+      </Geometry>
+      <WatchZones>
+        <WatchZone>
+          <Name>isLoading</Name>
+          <Geometry>
+            <X>0</X>
+            <Y>0</Y>
+            <Width>91</Width>
+            <Height>31</Height>
+          </Geometry>
+          <Watches>
+            <Watcher>
+              <Name>loading</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+              <WatchImages>
+                <WatchImage>
+                  <FilePath>imgs\loading.png</FilePath>
+                </WatchImage>
+              </WatchImages>
+            </Watcher>
+          </Watches>
+        </WatchZone>
+      </WatchZones>
+    </Screen>
+  </Screens>
+</GameProfile>
