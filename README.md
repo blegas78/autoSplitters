@@ -1,5 +1,12 @@
 ## Download
 #### You can download the latest `.vas` files here: [`Releases Page`](https://github.com/blegas78/autoSplitters/releases)
+
+## Video Tutorial
+
+#### Load Remover setup tutorial: [https://www.youtube.com/watch?v=TIU9j-prm7M](https://www.youtube.com/watch?v=TIU9j-prm7M) *by @DorianSnowball*
+
+###### *Old video: https://www.youtube.com/watch?v=TIU9j-prm7M* *by @blegas78*
+
 ##
 
 
@@ -10,12 +17,10 @@ I am active in the Horizon Zero Dawn and The Last Of Us (1/2) communities.  Thes
 These load removers are based on reading the HUD in particular places. Both the HZD and TLOU2 efforts are intended to be used with LiveSplit using the [`Video Auto Splitter (VAS)`](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases) component. Instructions for installation are already provided by the VAS github, but I will cover them as well.
 
 The VAS is only one necessary component. You also need to get a video source from your game into the VAS component.
-Since OBS version 26 the previosly required [OBS-VirtualCam](https://github.com/CatxFish/obs-virtual-cam) is no longer strictly needed, as from this release onwards a virtual cam feature is shipped with OBS itself. XSplit also has a Virtual Camera feature.
-
-Video with information and installation: [`https://www.youtube.com/watch?v=lmLSUKhvSrg`](https://www.youtube.com/watch?v=lmLSUKhvSrg) *(out of date)*
+Starting with OBS version 26.x.x, they now ship a virtual cam with OBS itself, however some runners have encountered some reliability issues with this method so it is recommended you find out wich works best for yourself.
 
 
-###### Please also see the change log in each load remover's description regarding the reason for updates to `.vas` files.
+###### Please also see the change log in each load remover's readme regarding the reason for updates to `.vas` files.
 
 ##  Do they work?
 
@@ -51,7 +56,7 @@ The next thing that needs to be done is share the video from OBS to LiveSplit.
 
 ### 2.1 Using OBS' built-in vitual cam
 
-###### This assuems you have a OBS version newer than 26.x.x
+Starting with OBS version 26.x.x, they now ship a virtual cam with OBS itself, however some runners have encountered some reliability issues with this method so it is recommended you find out wich works best for you.
 
 Just hit `Start Virtual Cam` located in the same menu as `Start Recording`
 
@@ -203,12 +208,13 @@ This was done to eliminate the need for this extra section.
 Though I'm the one building the configuration files I simply do not have the resources to test every scenario and every configuration.  I greatly appreciate when others report on problems so that I can make these tools better.  I view development on these tools as a community effort.
 
 #### HZD
-- [ElkjaerTV](https://www.twitch.tv/elkjaertv) (Timing verification)
-- [everyday_aussie](https://www.twitch.tv/everydayaussie) (Timing verification, reason for the Aussie .vas)
-- [charlatan_11235](https://www.twitch.tv/charlatan_11235) (Tested working function of PS4Share)
-- [leiberton](https://www.twitch.tv/leiberton) (Tested working function of PS4Share)
-- [Aquila_Ezio](https://www.twitch.tv/aquila_ezio) (Found success in newer software versions)
-- [JustSaft](https://www.twitch.tv/justsaft) (HZD load remover and GitHub repo optimizations and made a german load remover for HZD)
+- [ElkjaerTV](https://www.twitch.tv/elkjaertv): Timing verification
+- [everyday_aussie](https://www.twitch.tv/everydayaussie): Timing verification, reason for the Aussie .vas
+- [charlatan_11235](https://www.twitch.tv/charlatan_11235): Tested working function of PS4Share
+- [leiberton](https://www.twitch.tv/leiberton): Tested working function of PS4Share
+- [Aquila_Ezio](https://www.twitch.tv/aquila_ezio): Found success in newer software versions
+- [JustSaft](https://www.twitch.tv/justsaft): HZD load remover and GitHub repo optimizations and made a german load remover for HZD
+- [habeebs_](https://twitch.tv/habeebs_) & [DorianSnowball](https://www.twitch.tv/DorianSnowball): PT-BR Load Remover
 
 #### TLOU2
 - [DemonicRobots](https://www.twitch.tv/demonicrobots) (Helped spearhead and test initial load remover)
