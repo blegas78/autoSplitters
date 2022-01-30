@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Engine Paused?"</Description>
+      <LastState Value="1" RealAddress="7FF7CFB4939C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>"HorizonZeroDawn.exe"+0298BC48</Address>
+      <Offsets>
+        <Offset>C7C</Offset>
+        <Offset>50</Offset>
+        <Offset>0</Offset>
+        <Offset>CC8</Offset>
+        <Offset>0</Offset>
+        <Offset>398</Offset>
+        <Offset>60</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"Game window not in focus?"</Description>
+      <LastState Value="1" RealAddress="7FF7CF128410"/>
+      <VariableType>Byte</VariableType>
+      <Address>"HorizonZeroDawn.exe"+023080A0</Address>
+      <Offsets>
+        <Offset>128</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>29</ID>
+      <Description>"Map open? (50/50 chance it'll work)"</Description>
+      <LastState Value="0" RealAddress="7FF7CF128413"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>"HorizonZeroDawn.exe"+023080C0</Address>
+      <Offsets>
+        <Offset>AB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>41</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00" RealAddress="7FF7D3F40638"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+7120638</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>59</ID>
+          <Description>"pointerscan result"</Description>
+          <LastState Value="0" RealAddress="7FF7D3F40638"/>
+          <VariableType>Byte</VariableType>
+          <Address>"HorizonZeroDawn.exe"+0281A0E8</Address>
+          <Offsets>
+            <Offset>658</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>60</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00" RealAddress="7FF7CFE71DF9"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+3051DF9</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>61</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00" RealAddress="7FF7CFE71E15"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+3051E15</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>62</ID>
+      <Description>"No description"</Description>
+      <LastState Value="01" RealAddress="7FF7CFEA66E9"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+30866E9</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>63</ID>
+      <Description>"No description"</Description>
+      <LastState Value="02" RealAddress="7FF7CFEA6705"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+3086705</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>64</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00" RealAddress="7FF7CFF1F981"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+30FF981</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>65</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00" RealAddress="7FF7CFF1F99D"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+30FF99D</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>66</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00" RealAddress="7FF7D003EA29"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+321EA29</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>67</ID>
+      <Description>"No description"</Description>
+      <LastState Value="00" RealAddress="7FF7D003EA45"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+321EA45</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>94</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0" RealAddress="7FF7D3F406A5"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+71206A5</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>95</ID>
+          <Description>"pointerscan result"</Description>
+          <LastState Value="0" RealAddress="7FF7D3F406A5"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>"HorizonZeroDawn.exe"+02816728</Address>
+          <Offsets>
+            <Offset>905</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>127</ID>
+      <Description>"0 = loading?"</Description>
+      <LastState Value="0" RealAddress="7FF7CFDDE7B0"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>7FF7CFDDE7B0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>128</ID>
+      <Description>"Group 1"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>96</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7CFB4939C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2D2939C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>97</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7CFD9B239"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2F7B239</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>98</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDD656F"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FB656F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>99</ID>
+          <Description>"No description"</Description>
+          <LastState Value="119" RealAddress="7FF7CFDDB707"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FBB707</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>100</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDDB843"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FBB843</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>101</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDDC883"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FBC883</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>102</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE0F47"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC0F47</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>103</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE0F6F"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC0F6F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>104</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE0F9F"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC0F9F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE0FC7"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC0FC7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>106</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE0FD7"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC0FD7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>107</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE0FE3"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC0FE3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>108</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE1023"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC1023</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>109</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE1CF3"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC1CF3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>110</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE1CFF"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC1CFF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>111</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE1F6F"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC1F6F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>112</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE291F"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC291F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>113</ID>
+          <Description>"No description"</Description>
+          <LastState Value="15" RealAddress="7FF7CFDE2A63"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC2A63</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>114</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE3F03"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC3F03</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>115</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE43B3"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC43B3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>116</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE440F"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC440F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>117</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDE9597"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FC9597</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>118</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDEA77B"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FCA77B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>119</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDEA7C7"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FCA7C7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>120</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CFDF32C3"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2FD32C3</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>121</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D0A82BF0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+3C62BF0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>122</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D2CF7F3C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+5ED7F3C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>123</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D3F406A5"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71206A5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>124</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D467FECC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+785FECC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>125</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D468024C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+786024C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>126</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D5B0862C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8CE862C</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>129</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0" RealAddress="FE268EEA70"/>
+      <VariableType>Byte</VariableType>
+      <Address>FE268EEA70</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>130</ID>
+      <Description>"Group 2"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>131</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF646E89"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2826E89</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>132</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647679"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827679</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>133</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647819"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827819</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>134</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF6479B9"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+28279B9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>135</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF6479D9"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+28279D9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>136</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF6479F9"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+28279F9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>137</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647A19"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827A19</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>138</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647A39"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827A39</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>139</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647A59"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827A59</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>140</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647A79"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827A79</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>141</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647A99"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827A99</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>142</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647AB9"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827AB9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>143</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647AE1"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827AE1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>144</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647B11"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827B11</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>145</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647B39"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827B39</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>146</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647B61"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827B61</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>147</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647B89"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827B89</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>148</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647BB1"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827BB1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>149</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647BD9"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827BD9</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>150</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647C01"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827C01</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>151</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647D61"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827D61</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>152</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647DB1"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827DB1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>153</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7CF647DD1"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2827DD1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>154</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7CFB4939C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2D2939C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>155</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7CFD9B239"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+2F7B239</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>156</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D0A82BF0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+3C62BF0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>157</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D3FE8897"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71C8897</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>158</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D3FF416A"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71D416A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>159</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D3FF41F2"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71D41F2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>160</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D3FF4DA5"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71D4DA5</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>161</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D40024C2"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71E24C2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>162</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D400254A"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71E254A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>163</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D4005B52"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71E5B52</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>164</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D4005BDA"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71E5BDA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>165</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D400AA3D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71EAA3D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>166</ID>
+          <Description>"No description"</Description>
+          <LastState Value="3" RealAddress="7FF7D400AD2A"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71EAD2A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>167</ID>
+          <Description>"No description"</Description>
+          <LastState Value="3" RealAddress="7FF7D400ADB2"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71EADB2</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>168</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A08D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA08D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>169</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A18D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA18D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>170</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A28D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA28D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>171</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A38D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA38D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>172</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A48D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA48D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>173</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A58D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA58D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>174</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A68D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA68D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>175</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401A98D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FA98D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>176</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401AA8D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FAA8D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>177</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401AB8D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FAB8D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>178</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401AC8D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FAC8D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>179</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401AE8D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FAE8D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>180</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401AF8D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FAF8D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>181</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B08D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB08D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>182</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B18D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB18D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>183</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B28D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB28D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>184</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B38D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB38D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>185</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B48D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB48D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>186</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401B64D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB64D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>187</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B78D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB78D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>188</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B80D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB80D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>189</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401B90D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FB90D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>190</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401BA0D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FBA0D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>191</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401BB0D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FBB0D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>192</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401BC0D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FBC0D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>193</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401BD0D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FBD0D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>194</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401BE0D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FBE0D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>195</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401BF0D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FBF0D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>196</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D401C00D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FC00D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>197</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401C24D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FC24D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>198</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401C34D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FC34D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>199</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401C44D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FC44D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>200</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401C74D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FC74D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>201</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401C84D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FC84D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>202</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401C94D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FC94D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>203</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401CA4D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FCA4D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>204</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401CB4D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FCB4D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>205</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401CC4D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FCC4D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>206</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D401CD4D"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+71FCD4D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>207</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D40290BC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+72090BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>208</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4030F84"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7210F84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>209</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D403D84A"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+721D84A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>210</ID>
+          <Description>"No description"</Description>
+          <LastState Value="3" RealAddress="7FF7D404344A"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+722344A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>211</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D40520BC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+72320BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>212</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D406F44A"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+724F44A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>213</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4072F84"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7252F84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>214</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D46E2EAC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+78C2EAC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>215</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D46E2F30"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+78C2F30</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>216</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D46E2FB4"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+78C2FB4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>217</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D46E31C8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+78C31C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>218</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D46E321C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+78C321C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>219</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4744C80"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7924C80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>220</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4744E4C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7924E4C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>221</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4790364"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7970364</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>222</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4790398"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7970398</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>223</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D493BC00"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7B1BC00</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>224</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D493BE64"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7B1BE64</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>225</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D493BE74"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7B1BE74</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>226</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D493BF10"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7B1BF10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>227</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D493BF58"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7B1BF58</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>228</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D49940D8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7B740D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>229</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D499427C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7B7427C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>230</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4A8C078"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7C6C078</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>231</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4A8C080"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7C6C080</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>232</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4A8C154"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7C6C154</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>233</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4A8C1A8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7C6C1A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>234</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B0BED8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7CEBED8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>235</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B610C0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D410C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>236</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B6114C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D4114C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>237</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B611C8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D411C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>238</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B61214"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D41214</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>239</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B6121C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D4121C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>240</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B61260"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D41260</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>241</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B61278"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D41278</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>242</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B6127C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D4127C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>243</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B612C8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D412C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>244</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B6139C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D4139C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>245</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B73C61"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D53C61</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>246</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B74060"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D54060</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>247</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B741DC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D541DC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>248</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B741F8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D541F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>249</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B74248"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D54248</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>250</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B74300"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D54300</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>251</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B743A8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D543A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>252</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4B9BDDC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7D7BDDC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>253</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4D38C24"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7F18C24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>254</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4DB6E70"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7F96E70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>255</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4DB6F80"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7F96F80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>256</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4DB7054"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7F97054</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>257</ID>
+          <Description>"No description"</Description>
+          <LastState Value="255" RealAddress="7FF7D4DB71F8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7F971F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>258</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4DB729C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7F9729C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>259</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4DB7358"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7F97358</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>260</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4DF12F0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7FD12F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>261</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4E142F4"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+7FF42F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>262</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4EDC25C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+80BC25C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>263</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4EDC26C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+80BC26C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>264</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4FF6FD8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+81D6FD8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>265</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4FF7228"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+81D7228</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>266</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4FF732C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+81D732C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>267</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D4FF7388"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+81D7388</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>268</ID>
+          <Description>"No description"</Description>
+          <LastState Value="247" RealAddress="7FF7D5016F84"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+81F6F84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>269</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D50173D4"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+81F73D4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>270</ID>
+          <Description>"No description"</Description>
+          <LastState Value="3" RealAddress="7FF7D501B564"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+81FB564</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>271</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D5088EE0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8268EE0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>272</ID>
+          <Description>"No description"</Description>
+          <LastState Value="136" RealAddress="7FF7D51F3390"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+83D3390</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>273</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D526E7EC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+844E7EC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>274</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D526EEFC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+844EEFC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>275</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D526EF38"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+844EF38</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>276</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D52FBC14"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+84DBC14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>277</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D52FBC58"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+84DBC58</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>278</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D52FBD00"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+84DBD00</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>279</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D52FBD24"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+84DBD24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>280</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D53A6E84"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8586E84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>281</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D53A6F08"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8586F08</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>282</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D53A6F1C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8586F1C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>283</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D53A6F2C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8586F2C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>284</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D53A6FDC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8586FDC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>285</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54480F4"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86280F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>286</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54481CC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86281CC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>287</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54481D0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86281D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>288</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54481F4"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86281F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>289</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54482F4"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86282F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>290</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54DBDAC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86BBDAC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>291</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54DBDFC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86BBDFC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>292</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54DBE10"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86BBE10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>293</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D54DC244"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+86BC244</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>294</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D5557054"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8737054</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>295</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D55571FC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87371FC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>296</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A144"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA144</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>297</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A21C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA21C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>298</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A244"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA244</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>299</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A2EC"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA2EC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>300</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A2F8"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA2F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>301</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A30C"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA30C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>302</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A320"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA320</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>303</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A3A0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA3A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>304</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A3B0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA3B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>305</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D560A3D0"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+87EA3D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>306</ID>
+          <Description>"No description"</Description>
+          <LastState Value="0" RealAddress="7FF7D5A1B0B7"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8BFB0B7</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>307</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D5A1B10B"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8BFB10B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>308</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D5A1B19F"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8BFB19F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>309</ID>
+          <Description>"No description"</Description>
+          <LastState Value="2" RealAddress="7FF7D5A1B2FB"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8BFB2FB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>310</ID>
+          <Description>"No description"</Description>
+          <LastState Value="1" RealAddress="7FF7D5A1B3DF"/>
+          <VariableType>Byte</VariableType>
+          <Address>HorizonZeroDawn.exe+8BFB3DF</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>311</ID>
+      <Description>"No description"</Description>
+      <LastState Value="1" RealAddress="7FF7D401A48D"/>
+      <VariableType>Byte</VariableType>
+      <Address>HorizonZeroDawn.exe+71FA48D</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

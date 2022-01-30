@@ -1,37 +1,49 @@
 
 state("HorizonZeroDawn", "v1.11.1")
 {
-    // Value I found last stream
     // "the magic variable, we have no idea why it works" -x34
     // ... it doesn't work.. elkjaerRIP
-    uint garbage : "HorizonZeroDawn.exe", 0x07163548, 0xD68, 0xB88, 0xA88, 0xF78, 0xF80, 0x948, 0x8D0;
+    // a game restart later: not working anymore
+    //uint garbage : "HorizonZeroDawn.exe", 0x07163548, 0xD68, 0xB88, 0xA88, 0xF78, 0xF80, 0x948, 0x8D0;
 
 
     // Map/Inventory (all tabs) open
     // 1 = true
     // 0 = false
-    uint MapInventory : "HorizonZeroDawn.exe", 0x0283D6A0, 0x599;
+    byte MapInventory : "HorizonZeroDawn.exe", 0x0283D6A0, 0x599;
+    // Map open (same one as in v1.10)
+    // 0 = false
+    // 1 = window not in focus or something else (wtf?)
+    // 16777217 = true
+    // -> Not useful for this load remover
+    //uint MapSelectedInMenu : "HorizonZeroDawn.exe", 0x0231A020, 0xE8;
+    byte MapSelectedInMenu : "HorizonZeroDawn.exe", 0x0231A020, 0xE8;
 
 
     // Maybe the same as GameEnginePaused from v1.10
-    uint GameEnginePaused : "HorizonZeroDawn.exe", 0x071346C8, 0x4E8, 0xE38, 0xA88, 0xF78, 0xF80, 0x8E8, 0xE1C;
+    //uint GameEnginePaused : "HorizonZeroDawn.exe", 0x071346C8, 0x4E8, 0xE38, 0xA88, 0xF78, 0xF80, 0x8E8, 0xE1C;
+    uint GameEnginePaused : "HorizonZeroDawn.exe", 0x07138C78, 0x3BC;
 
 
-    // Map open (same one as in v1.10)
-    //uint MapOpen : "HorizonZeroDawn.exe", "HorizonZeroDawn.exe", 0x0231A020, 0xE8;
+    // New Value:
+    // **Should** be 0 if not loading.
+    byte NewValue2 : "HorizonZeroDawn.exe", 0x026A2AC0, 0xF0, 0x70, 0x10, 0x88, 0x12;
+
+
+    // literally something
+    //byte Something : "HorizonZeroDawn.exe", 0x028367A8, 0x4D8;
+    //byte Something2 : "HorizonZeroDawn.exe", 0x028367A8, 0x4D9;
 }
 
 state("HorizonZeroDawn", "v1.10")
 {
     // Game Engine paused value. Equal to "1" if game engine is paused, "0" if otherwise.
-    // Currently used as a safty mechanism to prevent a detection if the other value does random things.
-    // This one seems to be stable and reliable, EXCEPT when in the main menu,
-    // although it sometimes returns 3271576080 (wtf?)
+    // This one seems to be stable and reliable
     uint GameEnginePaused : "HorizonZeroDawn.exe", 0x0298BC48, 0x60, 0x398, 0x0, 0xCC8, 0x0, 0x50, 0xC7C;
 
     // -> Is map open?
-    // never tested elkjaerRIP
-    // uint MapOpen : "HorizonZeroDawn.exe", 0x0298BC48, 0x60, 0x398, 0x0, 0xCC8, 0x0, 0x50, 0xC7E;
+    // never tested elkjaerRIP 
+    // uint MapSelectedInMenu : "HorizonZeroDawn.exe", 0x0298BC48, 0x60, 0x398, 0x0, 0xCC8, 0x0, 0x50, 0xC7E;
 
     // Not used value. Declared Useless
     //byte ThisValue1 : "HorizonZeroDawn.exe", 0x02F7EC30, 0x140, 0xE0, 0x0, 0xC0, 0x18, 0x130, 0xA44;
@@ -46,7 +58,7 @@ state("HorizonZeroDawn", "v1.10")
     // Not used value. Declared Useless
     // Called "ThisOtherValue" in Cheat Table.
     //byte ThisValue4 : "HorizonZeroDawn.exe", 0x02552888, 0x38C;
-    
+
     // Loading if restarted from save.
     // Testing showed that this value is equal to "0" if restarted from save, "1" if otherwise.
     // Not reliable
@@ -59,73 +71,149 @@ state("HorizonZeroDawn", "v1.10")
     byte FastTravelValue : "HorizonZeroDawn.exe", 0x02816728, 0x905;
 }
 
+// At startup of LiveSplit/loading the ASL file
 startup
 {
-    // A refresh rate of 20 or 30 should be all we need. Doing more than that takes a lot of overhead.
+    // Setting up variables
     vars.isCurrentlyLoading = false;
-    vars.stopwatch = new Stopwatch();
+    //vars.LoadingFromMM = false; // is this still needed since the usage was commented?
 
-    // settings.Add(id, default_value = true, description = null, parent = null)
-    settings.Add("moreRefreshRate", false, "Use a refresh rate of 20, instead of 4 by default", null);
-    settings.Add("print", true, "Print debug output", null);
-    settings.Add("printfirstmodule", false, "Print the size of the first module", null);
+
+    // Settings need to be added here
+    // Syntax: settings.Add(id, default_value = true, description = null, parent = null)
+    settings.Add("moreRefreshRate", false, "Use a refresh rate of 20");
+    settings.Add("print", true, "Print debug output");
+    settings.Add("PauseOnPauseMenu", false, "Pause the timer on the Pause menu");
 }
 
 update
 {
+    // Check if version is not set
+    // Just a failsafe atm, can probably be removed
     if (version == "")
         return false;
 
+    // Checking settings - there's probably a better way to do this but here we go LUL
+    if (settings["moreRefreshRate"])
+        { refreshRate = 20; } else { refreshRate = 8; };
+
+    // Debug printing
+    // When a debug print is needed, maybe add it here
     if (settings["print"])
     {
-        print("LR DEBUG: "
-            + current.NewValue
+        print(
+            "[LR DEBUG] MapInventory:"
+            + current.MapInventory
+            + " GameEng:"
+            + current.GameEnginePaused
+            + " NewValue2:"
+            + current.NewValue2
+            + " MapSelectedInMenu:"
+            + current.MapSelectedInMenu
+            + " IsLoading:"
+            + vars.isCurrentlyLoading
         );
     };
-    
-    if (settings["printfirstmodule"])
-        { print(modules.First().ModuleMemorySize.ToString()); };
-   
-    if (settings["moreRefreshRate"])
-        { refreshRate = 20; } else { refreshRate = 4; };
+
 
     // Loading check
-    if (current.GameEnginePaused)
+    if (current.GameEnginePaused == 1)
     {
-        if (!current.MapInventory)
+        if (current.NewValue2 != 0)
         {
             vars.isCurrentlyLoading = true;
+        }
+        else if (settings["PauseOnPauseMenu"])
+        {
+            if (current.GameEnginePaused == 1 && current.MapInventory == 0 && current.MapSelectedInMenu == 0)
+                vars.isCurrentlyLoading = true;
         }
         else vars.isCurrentlyLoading = false;
     }
     else vars.isCurrentlyLoading = false;
 
-
+    /* // Scars attempt at the loading check
+    if (current.GameEnginePaused == 1)
+    {
+        if (current.MapInventory == 0)
+        {
+            if (setting[PauseOnPauseMenu])
+            {
+                vars.isCurrentlyLoading = true;
+            }
+            else if (current. == ) // TODO add pause menu variable
+            {
+                vars.isCurrentlyLoading = true;
+            }
+            else 
+            {
+                vars.isCurrentlyLoading = false;
+            }
+        }
+        else 
+        {
+            vars.isCurrentlyLoading = false;
+        }
+    }
+    */
 }
 
+
+
+// Init of the LR after process was found
 init
 {
-    // Debug prints.
-    // I use dbgview from the Sysinternals suite to read those
-    print("[LR DEBUG] Found HZD process!");
-    refreshRate = 4;
+    // Debug print
+    if (settings["print"])
+        { print("[LR DEBUG] Found HZD process!"); }
+
+    // Check first module size to determine game version
+    // I don't know any other sizes, so we're doing this
     if (modules.First().ModuleMemorySize == 150884352)
-        { version = "v1.11.1"; }
-    else version = "v1.10";
+        { version = "v1.11.1"; } else { version = "v1.10"; };
+
+    // A refresh rate of 10 should be all we need
+    // since doing more than this takes a lot of CPU overhead away.
+    // Anyways, there's a setting for more, if needed.
+    refreshRate = 4;
 }
+
 
 isLoading
 {
     return vars.isCurrentlyLoading;
 }
 
+
 reset
 {
-    if (current.garbage == 1) return true;
+    // This isn't really nessesarry but I might aswell use this address elkjaerLUL
+    //if (current.garbage == 0) return true;
 }
 
+
+// There will probably never be anything that we CAN use for splitting
+// Simply for the fact that if we base this on the current route, we'd
+// have to change this every single time the route changes
+// (except at Aratak or HADES to end the run)
 split{}
 
-start{}
 
-exit{ timer.IsGameTimePaused = true; }
+// Start timer
+start
+{
+    // The commented code below will start the timer whenever you hit CONTINUE or load a save from the main menu
+    //if ((old.garbage == 0) && (current.garbage == 1)) vars.LoadingFromMM = true;
+    //if (vars.LoadingFromMM) if (current.garbage == 2)
+    //{
+    //vars.LoadingFromMM = false;
+    //return true;
+    //}
+}
+
+// This should prevent LiveSplit from crashing whenever the game process exits
+exit
+{ timer.IsGameTimePaused = true; }
+
+
+// TODO(JustSaft): Start using this: https://github.com/LiveSplit/LiveSplit.AutoSplitters#memory

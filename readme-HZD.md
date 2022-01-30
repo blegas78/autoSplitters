@@ -85,6 +85,12 @@ I added a classic variant where the scan region settings are the same as before 
 
 ##  Change Log
 
+###### 18.12.2021:
+- Updates to memory based Load Remover for patch 1.11.1
+- Added a variant for the Brazilian Portuguese (pt-br) language
+  - Thanks to DorianSnowball and Habeebs 
+
+###### 29.05.2021:
 - Efforts to lower CPU usage
   - Shrunken Scan Region size (See Scan Region below)
   - Removed "start" WatchZone
@@ -94,4 +100,4 @@ I added a classic variant where the scan region settings are the same as before 
 
 ## Problems/Issues specific to this load remover
 
-###### none so far
+--
