@@ -215,6 +215,7 @@ Though I'm the one building the configuration files I simply do not have the res
 - [Aquila_Ezio](https://www.twitch.tv/aquila_ezio): Found success in newer software versions
 - [JustSaft](https://www.twitch.tv/justsaft): HZD load remover and GitHub repo optimizations and made a german load remover for HZD
 - [habeebs_](https://twitch.tv/habeebs_) & [DorianSnowball](https://www.twitch.tv/DorianSnowball): PT-BR Load Remover
+- [MaDe_bY_ScaR](https://www.twitch.tv/made_by_scar) Made a 720p variant of the HZD load remover to handle corner cases
 
 #### TLOU2
 - [DemonicRobots](https://www.twitch.tv/demonicrobots) (Helped spearhead and test initial load remover)
@@ -224,7 +225,6 @@ Though I'm the one building the configuration files I simply do not have the res
 - [ScarlettTheHuman](https://www.twitch.tv/scarlettthehuman) (Has done a tremendous amount of modeling/reverse engineering to figure out how ND IGT works.)
 - [happy_asteroid](https://www.twitch.tv/happy_asteroid) (Tester extraordinare, helped gather a ton of data to validate ND IGT models)
 - [https://github.com/alexjlockwood](https://github.com/alexjlockwood) (Tester extraordinare, helped gather a ton of data to validate ND IGT models)
-- [MaDe_bY_ScaR](https://www.twitch.tv/made_by_scar) Made a 720p variant of the HZD load remover to handle corner cases
 
 #### Donators
 
