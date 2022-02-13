@@ -5,8 +5,8 @@
     <Screen>
       <Name>Game</Name>
       <Geometry>
-        <Width>55</Width>
-        <Height>22</Height>
+        <Width>91</Width>
+        <Height>31</Height>
       </Geometry>
       <WatchZones>
         <WatchZone>
@@ -14,8 +14,8 @@
           <Geometry>
             <X>0</X>
             <Y>0</Y>
-            <Width>55</Width>
-            <Height>22</Height>
+            <Width>91</Width>
+            <Height>31</Height>
           </Geometry>
           <Watches>
             <Watcher>
@@ -23,7 +23,7 @@
               <ErrorMetric>PeakAbsolute</ErrorMetric>
               <WatchImages>
                 <WatchImage>
-                  <FilePath>german_loading.png</FilePath>
+                  <FilePath>imgs\loading.png</FilePath>
                 </WatchImage>
               </WatchImages>
             </Watcher>

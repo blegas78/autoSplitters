@@ -30,7 +30,7 @@ With all of the above up and running and showing IGT, try to start the timer and
 ### Alternate/Aussie variant
 > Variant with different tunings for everydayaussie. Uses the same scan region settings as the normal variant.
 
-### 720p variant
+### Saft's 720p variant
 > Variant for a 1280x720p canvas
 - Scan Region settings
   - X: 66
@@ -38,7 +38,7 @@ With all of the above up and running and showing IGT, try to start the timer and
   - Width: 76
   - Height: 12
 
-### Alternate 720p variant
+### Scar's 720p variant
 
 - Scan Region settings
   - X: 59

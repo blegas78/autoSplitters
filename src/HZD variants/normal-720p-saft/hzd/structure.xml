@@ -26,7 +26,7 @@
               <ErrorMetric>PeakAbsolute</ErrorMetric>
               <WatchImages>
                 <WatchImage>
-                  <FilePath>imgs\loading.png</FilePath>
+                  <FilePath>720p_loading.png</FilePath>
                 </WatchImage>
               </WatchImages>
             </Watcher>
