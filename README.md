@@ -2,10 +2,8 @@
 #### You can download the latest `.vas` files here: [`Releases Page`](https://github.com/blegas78/autoSplitters/releases)
 
 ## Video Tutorial
-
 #### Load Remover setup tutorial: [https://www.youtube.com/watch?v=TIU9j-prm7M](https://www.youtube.com/watch?v=TIU9j-prm7M) *by @DorianSnowball*
-
-###### *Old video: https://www.youtube.com/watch?v=TIU9j-prm7M* *by @blegas78*
+###### *Old video: https://www.youtube.com/watch?v=TIU9j-prm7M by @blegas78*
 
 ##
 
@@ -33,7 +31,7 @@ With all of the above up and running and showing IGT, try to start the timer the
 
 ## Setup
 
-##### This assumes that you already have LiveSplit installed.  If not, please visit the [LiveSplit release page](https://github.com/LiveSplit/LiveSplit/releases).
+##### This assumes that you already have LiveSplit installed.  If not, please visit the [`LiveSplit release page`](https://github.com/LiveSplit/LiveSplit/releases).
 
 I recommend a reboot before installation to avoid any headaches.
 
@@ -52,7 +50,7 @@ I recommend a reboot before installation to avoid any headaches.
 
 The next thing that needs to be done is share the video from OBS to LiveSplit.
 
-###### This assumes that you already have some flavor of OBS installed.  If not, please visit the [OBS releases page](https://github.com/obsproject/obs-studio/releases). A recording software by the name of XSplit also has a Virtual Cam feature wich will not be covered here.
+###### This assumes that you already have some flavor of OBS installed.  If not, please visit the [`OBS releases page`](https://github.com/obsproject/obs-studio/releases). A recording software by the name of XSplit also has a Virtual Cam feature wich will not be covered here.
 
 ### 2.1 Using OBS' built-in vitual cam
 
@@ -66,7 +64,7 @@ Just hit `Start Virtual Cam` located in the same menu as `Start Recording`
 ### 2.2 Using the OBS virtual cam plugin
 
 1. Ensure OBS is closed.
-2. Download the [OBS virtual cam plugin](https://github.com/CatxFish/obs-virtual-cam/releases)
+2. Download the [`OBS virtual cam plugin`](https://github.com/CatxFish/obs-virtual-cam/releases)
 3. Run the installation. One of the prompts will ask how many cameras you want.  I selected 4, but really only 1 is needed.
 4. Open OBS.
 5. In your sorce panel, right-click on your game capture source, then click on `Filters`
@@ -77,15 +75,13 @@ Just hit `Start Virtual Cam` located in the same menu as `Start Recording`
  - Color Range: Partial
 
 7. Under `Effects`, add a new filter.  It may look like a `+` button near the bottom. Add a filter called `VirtualCam`
-8. There are some settings here.  I leave "Horizontal Flip" and "Keep Aspect Ratio" NOT checked.  I also set "Buffered Frames" to 1
+8. There are some settings here.  I leave `Horizontal Flip` and `Keep Aspect Ratio` NOT checked. I also set `Buffered Frames` to `1`
 9.  Most importantly in these settings, remember the name of `Target Camera`, for me, it is `OBS-Camera`
-10. Click on the "Start" button
-
-###### IMPORTANT: Every time that you close/open OBS, you will need to navigate to the VirtualCam filter and click that "Start" button.  It will NOT auto-start each time OBS is restarted.
+10. Click on the `Start` button. Note that it will not auto-start the VirtualCam - you have to come back to this menu very time you close/open OBS.
 
 > Your game feed should now be fed to a virtual webcam with the name designated under "Target Camera."
 
-###### Tip: If you're unsure that virtualcam is actually running, test it using any program that makes use of a webcam, e.g. Discord. (Go to ``Settings`` -> ``Voice- & Videochat`` -> ``Video settings`` -> Click the ``Test`` button)
+###### Tip: If you're unsure that virtualcam is actually running, you can test it using any program that makes use of a webcam, e.g. Discord. (Go to ``Settings`` -> ``Voice- & Videochat`` -> ``Video settings`` -> Click the ``Test`` button)
 
 
 ### 3. PlayStation™ Settings
@@ -132,10 +128,10 @@ I have reports from some users that have had success using PS4 share instead of 
 
 There may be issues in installation for different versions of software, but don't be afraid to try versions different from my own. Please check the troubleshooting section if you encounter a problem.
 
- - [Livesplit 1.8.10](https://github.com/LiveSplit/LiveSplit/releases)
- - [Video Auto Splitter 0.5.2.3](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases)
- - [OBS 25.0.4](https://github.com/obsproject/obs-studio/releases)
- - [OBS-VirtualCam 2.0.4](https://github.com/CatxFish/obs-virtual-cam/releases)
+ - [`Livesplit 1.8.10`](https://github.com/LiveSplit/LiveSplit/releases)
+ - [`Video Auto Splitter 0.5.2.3`](https://github.com/ROMaster2/LiveSplit.VideoAutoSplit/releases)
+ - [`OBS 25.0.4`](https://github.com/obsproject/obs-studio/releases)
+ - [`OBS-VirtualCam 2.0.4`](https://github.com/CatxFish/obs-virtual-cam/releases)
 
 ###### I have also heard reports that versions newer than the above list also work. Thank you Aquila_Ezio!
 
@@ -184,11 +180,12 @@ I will build this section more and more as people run into issues with setup. Pl
 ###### This assumes the VAS is showing a preview of the game's video feed in the `Scan Region` settings
 
 - Cause 1
-  - You may be using LiveSplit version 1.8.16 (and/or newer). For unknown reasons this version of LiveSplit totally ignores the VAS. This may be fixable through a patch on the VAS developer's end.
-  - **Solution**: Downgrade LiveSplit. See [(LiveSplit releases page)](https://github.com/LiveSplit/LiveSplit/releases)
-- Cause 2
   - Your timer is still probably checking against Real Time Attack (RTA) instead of the loadless IGT.
   - **Solution**: Right-click the LiveSplit window, select `Compare Against` -> `Game Time`
+- Cause 2
+  - Although this is very unlikely, newer versions of LiveSplit may cause the VAS to not work. This can be temporary, but if everything worked fine before an update of LiveSplit you should downgrade again.
+  - **Solution**: See [`LiveSplit releases page`](https://github.com/LiveSplit/LiveSplit/releases)
+  - ###### "Pro tip: Restarting your PC can fix everything" -Saft
 
 
 ## Problems

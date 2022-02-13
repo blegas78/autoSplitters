@@ -13,38 +13,47 @@ I **HIGHLY** Recommend testing this before attempting a run each day by doing a 
 
 With all of the above up and running and showing IGT, try to start the timer and invoke a load by simply performing a fast-travel or loading a save.
 
-## Variants & Scan Region settings (notice me senpai)
-
+## Variants + Scan Region settings
 
 ### Normal variant
-
-This is the best working, recommended variant for any runs on any platform.
+> This is the best working, recommended variant for any runs on any platform.
 ###### More CPU performance sold seperatly OpieOP
-
  - Scan Region settings
    - X: 99
    - Y: 976
    - Width: 115
    - Height: 25
 
+### PC/memory based variant
+> "The REAL deal of autosplitting... if Saft'll ever finish it" -Saft
 
-### PC (memory based) variant (Steam version only) *
+### Alternate/Aussie variant
+> Variant with different tunings for everydayaussie. Uses the same scan region settings as the normal variant.
 
-You should use this variant for any runs on PC once development finishes.
-Currently, this load remover only works with the [Steam](https://store.steampowered.com/app/1151640/Horizon_Zero_Dawn_Complete_Edition/) edition of the game.
+### 720p variant
+> Variant for a 1280x720p canvas
+- Scan Region settings
+  - X: 66
+  - Y: 651
+  - Width: 76
+  - Height: 12
 
-> If you still want to test this, the `.asl` file can be found in `src/HZD variants/pc`.
+### Alternate 720p variant
 
-> The memory based LR should be available in LiveSplit itself once one `.asl` file works with the EGS, Steam and GOG edition of the game.
+- Scan Region settings
 
+*Add scan region settings here @Scar*
 
-### PS Remote Play variant
-
-Variant with tunings for using [`PS Remote Play`](https://www.playstation.com/en-us/remote-play/). Uses the same scan region settings as the normal variant.
-
+### 3440x1440 variant
+> Variant for a 3440x1440 canvas. At the moment using VirtualCam with this resolution will crash OBS, but this should theoretically work. :elkjaerLUL: :pdubWorried:
+- Scan Region settings
+  - X: 572
+  - Y: 1300
+  - Width: 153
+  - Height: 31
 
 ### German variant
-The german language has the smallest loading indicator text on loading screens pepeEZ
+> The german language has the smallest loading indicator text on loading screens :pepeEZ:
 
  - Scan Region settings
    - X: 99
@@ -53,7 +62,7 @@ The german language has the smallest loading indicator text on loading screens p
    - Height: 22
    
 ### Brazilian Portuguese (pt-br) variant
-Thanks to Habeebs for this variant!
+> Variant for Brazilian Portuguese. Thanks to Habeebs for this variant!
 
  - Scan Region settings
    - X: 86
@@ -63,8 +72,7 @@ Thanks to Habeebs for this variant!
 
 ### Dev variant
 
-This LR now introduces efforts that were talked about blegas's episode of the WTDW Podcast:
- - This LR checks if the RESTART FROM SAVE option in the pause menu is *highlighted* and *unavailiable*
+> This LR now introduces efforts for testing that were talked about blegas's episode of the WTDW Podcast: This LR checks if the RESTART FROM SAVE option in the pause menu is *highlighted* and *unavailiable* (currently, using this is against the speedrun.com/hzd rules)
 
  - Scan Region settings
    - Set X to 0
@@ -74,7 +82,7 @@ This LR now introduces efforts that were talked about blegas's episode of the WT
 
 
 ### Classic variant
-I added a classic variant where the scan region settings are the same as before this update (just as a backup)
+> Classic variant with the old scan region settings
 
  - Scan Region settings
    - X: 0
