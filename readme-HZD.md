@@ -41,8 +41,10 @@ With all of the above up and running and showing IGT, try to start the timer and
 ### Alternate 720p variant
 
 - Scan Region settings
-
-*Add scan region settings here @Scar*
+  - X: 59
+  - Y: 643
+  - Height: 91
+  - Width: 31
 
 ### 3440x1440 variant
 > Variant for a 3440x1440 canvas. At the moment using VirtualCam with this resolution will crash OBS, but this should theoretically work. :elkjaerLUL: :pdubWorried:
