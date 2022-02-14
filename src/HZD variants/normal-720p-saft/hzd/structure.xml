@@ -5,17 +5,20 @@
     <Screen>
       <Name>Game</Name>
       <Geometry>
-        <Width>55</Width>
-        <Height>22</Height>
+        <Width>76</Width>
+        <Height>12</Height>
       </Geometry>
+      <!-- Scan Region settings: X: 66        Y: 651 -->
+      <!--                   Width: 76   Height: 12 -->
+      <!-- 142 663 -->
       <WatchZones>
         <WatchZone>
           <Name>isLoading</Name>
           <Geometry>
             <X>0</X>
             <Y>0</Y>
-            <Width>55</Width>
-            <Height>22</Height>
+            <Width>76</Width>
+            <Height>12</Height>
           </Geometry>
           <Watches>
             <Watcher>
@@ -23,7 +26,7 @@
               <ErrorMetric>PeakAbsolute</ErrorMetric>
               <WatchImages>
                 <WatchImage>
-                  <FilePath>german_loading.png</FilePath>
+                  <FilePath>720p_loading.png</FilePath>
                 </WatchImage>
               </WatchImages>
             </Watcher>

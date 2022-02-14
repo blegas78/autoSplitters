@@ -95,7 +95,7 @@ update
 
     // Checking settings - there's probably a better way to do this but here we go LUL
     if (settings["moreRefreshRate"])
-        { refreshRate = 20; } else { refreshRate = 8; };
+        { refreshRate = 20; } else { refreshRate = 5; };
 
     // Debug printing
     // When a debug print is needed, maybe add it here
