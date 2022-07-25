@@ -1,8 +1,14 @@
 
+state("HorizonZeroDawn", "v1.11.2")
+{
+    // do stuff
+}
+
+// kept the old versions here just because
 state("HorizonZeroDawn", "v1.11.1")
 {
     // "the magic variable, we have no idea why it works" -x34
-    // ... it doesn't work.. elkjaerRIP
+    // ... it wasn't magic.. elkjaerRIP
     // a game restart later: not working anymore
     //uint garbage : "HorizonZeroDawn.exe", 0x07163548, 0xD68, 0xB88, 0xA88, 0xF78, 0xF80, 0x948, 0x8D0;
 
@@ -164,18 +170,21 @@ update
 init
 {
     // Debug print
+    refreshRate = 4;
+    print(modules.First().ModuleMemorySize);
     if (settings["print"])
         { print("[LR DEBUG] Found HZD process!"); }
 
+
     // Check first module size to determine game version
     // I don't know any other sizes, so we're doing this
-    if (modules.First().ModuleMemorySize == 150884352)
-        { version = "v1.11.1"; } else { version = "v1.10"; };
+    version = "v1.11.2"; //if (modules.First().ModuleMemorySize == ) { version = "v1.11.2"; }
+    //else if (modules.First().ModuleMemorySize == 150884352)
+    //    { version = "v1.11.1"; } else { version = "v1.10"; };
 
     // A refresh rate of 10 should be all we need
     // since doing more than this takes a lot of CPU overhead away.
     // Anyways, there's a setting for more, if needed.
-    refreshRate = 4;
 }
 
 
