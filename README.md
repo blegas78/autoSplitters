@@ -80,7 +80,7 @@ Just hit `Start Virtual Cam` located in the same menu as `Start Recording`
 
 ### 3. PlayStation™ Settings
 
-###### These instructions should also apply to the PS5, but they might have a different name.
+#### These instructions should also apply on PS5, but they might have a different name.
 
 These load removers are based on reading the HUD in particular places. The PS has the ability to change how the HUD is rendered based on system settings. In order to ensure that the HUD is in the correct spot, you will need to set the HUD to the largest setting.
 
@@ -90,12 +90,14 @@ Navigate to `Settings`
 
  - Enlarge the setting to the maximum setting, until `Enlarge` becomes greyed.
 
-#### Under: `Sound and Screen` -> `Video Output Settings` -> `Video Output Information`:
+#### Under: `Sound and Screen` -> `Video Output Settings`:
 
- - Resolution: 1920 x 1080 - 60Hz
- - Color Format: RGB
- - HDR: Disabled or Not Supported
-
+ - Resolution: `1080p` (or Automatic of you're using a 1080p display)
+ - RGB Range: `Full`
+ - HDR: `Off`
+ - Deep Color Output: `Off`
+ - Under `Sound and Screen` -> `Video Output Settings` -> `Video Output Information`,
+make sure **`Color format`** is **`RGB`**
 
 ### 4. Video Auto Splitter
 
