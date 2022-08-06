@@ -8,13 +8,15 @@
         <Width>1920</Width>
         <Height>1080</Height>
       </Geometry>
+
+      <WatchZones>
         <WatchZone>
           <Name>ResumeButton</Name>
           <Geometry>
-            <X>180</X>
-            <Y>711</Y>
-            <Width>109</Width>
-            <Height>29</Height>
+            <X>101</X>
+            <Y>681</Y>
+            <Width>117</Width>
+            <Height>30</Height>
           </Geometry>
           <Watches>
             <Watcher>
@@ -30,14 +32,25 @@
         </WatchZone>
 
         <WatchZone>
-          <Name>yellowExclamationMark</Name>
+          <Name>MiddleWatchZone</Name>
           <Geometry>
             <X>943</X>
-            <Y>285</Y>
+            <Y>284</Y>
             <Width>34</Width>
             <Height>34</Height>
           </Geometry>
           <Watches>
+
+            <Watcher>
+              <Name>otherYellowIcon</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+              <WatchImages>
+                <WatchImage>
+                  <FilePath>imgs\otherYellowIcon.png</FilePath>
+                </WatchImage>
+              </WatchImages>
+            </Watcher>
+
             <Watcher>
               <Name>yellowExclamationMark</Name>
               <ErrorMetric>PeakAbsolute</ErrorMetric>
@@ -47,18 +60,7 @@
                 </WatchImage>
               </WatchImages>
             </Watcher>
-          </Watches>
-        </WatchZone>
 
-        <WatchZone>
-          <Name>BlackSquareMiddle</Name>
-          <Geometry>
-            <X>943</X>
-            <Y>285</Y>
-            <Width>34</Width>
-            <Height>34</Height>
-          </Geometry>
-          <Watches>
             <Watcher>
               <Name>BlackSquareMiddle</Name>
               <ErrorMetric>PeakAbsolute</ErrorMetric>
@@ -68,11 +70,33 @@
                 </WatchImage>
               </WatchImages>
             </Watcher>
+
           </Watches>
         </WatchZone>
-        
+
         <WatchZone>
-          <Name>BlackSquareBR</Name>
+          <Name>ConfirmFT</Name>
+          <Geometry>
+            <X>1139</X>
+            <Y>660</Y>
+            <Width>91</Width>
+            <Height>19</Height>
+          </Geometry>
+          <Watches>
+            <Watcher>
+              <Name>ConfirmFT</Name>
+              <ErrorMetric>PeakAbsolute</ErrorMetric>
+              <WatchImages>
+                <WatchImage>
+                  <FilePath>imgs\ConfirmFT.png</FilePath>
+                </WatchImage>
+              </WatchImages>
+            </Watcher>
+          </Watches>
+        </WatchZone>
+
+        <WatchZone>
+          <Name>BR</Name>
           <Geometry>
             <X>1790</X>
             <Y>976</Y>
