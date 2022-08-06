@@ -2,8 +2,8 @@
 #### You can download the latest `.vas` files here: [`Releases Page`](https://github.com/blegas78/autoSplitters/releases)
 
 ## Video Tutorial
-#### Load Remover setup tutorial: [https://www.youtube.com/watch?v=TIU9j-prm7M](https://www.youtube.com/watch?v=TIU9j-prm7M) *by @DorianSnowball*
-###### *Old video: https://www.youtube.com/watch?v=TIU9j-prm7M by @blegas78*
+#### Load Remover setup tutorial: [https://youtu.be/TIU9j-prm7M](https://youtu.be/TIU9j-prm7M) *by @DorianSnowball*
+###### *Old video: https://youtu.be/lmLSUKhvSrg by @blegas78*
 
 ##
 
@@ -67,17 +67,11 @@ Just hit `Start Virtual Cam` located in the same menu as `Start Recording`
 2. Download the [`OBS virtual cam plugin`](https://github.com/CatxFish/obs-virtual-cam/releases)
 3. Run the installation. One of the prompts will ask how many cameras you want.  I selected 4, but really only 1 is needed.
 4. Open OBS.
-5. In your sorce panel, right-click on your game capture source, then click on `Filters`
-6. While you're here, please check if your settings match these:
-
- - Resolution: 1920x1080
- - Color Space: Default
- - Color Range: Partial
-
-7. Under `Effects`, add a new filter.  It may look like a `+` button near the bottom. Add a filter called `VirtualCam`
-8. There are some settings here.  I leave `Horizontal Flip` and `Keep Aspect Ratio` NOT checked. I also set `Buffered Frames` to `1`
-9.  Most importantly in these settings, remember the name of `Target Camera`, for me, it is `OBS-Camera`
-10. Click on the `Start` button. Note that it will not auto-start the VirtualCam - you have to come back to this menu very time you close/open OBS.
+5. In your sources panel, right-click on your game capture (or capture card) source, then click on `Filters`
+6. Under `Effects`, add a new filter.  It may look like a `+` button near the bottom. Add a filter called `VirtualCam`
+7. There are some settings here.  I leave `Horizontal Flip` and `Keep Aspect Ratio` NOT checked. I also set `Buffered Frames` to `1`
+8.  Most importantly in these settings, remember the name of `Target Camera`, for me, it is `OBS-Camera`
+9. Click on the `Start` button. Note that it will not auto-start the VirtualCam - you have to come back to this menu very time you close/open OBS.
 
 > Your game feed should now be fed to a virtual webcam with the name designated under "Target Camera."
 
